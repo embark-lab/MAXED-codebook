@@ -14,6 +14,6 @@ In order to request data use, please complete the following steps:
 
   **c.** Two identified EMBARK Lab collaborators you would be interested in working with (see [lab personnel](https://embark.psychiatry.wisc.edu/index.php/people/) for information about lab members and their interests)
 
-**2.** [Book a 15-minute meeting](https://calendly.com/katherine-schaumberg/15min) with Dr. Schaumberg to discuss your idea. 
+**2.** [Book a 15-minute meeting](https://calendly.com/katherine-schaumberg/15min) with Dr. Schaumberg to discuss your idea.
 
 For secondary analysis projects that *exclusively* use MAXED data, Dr. Schaumberg will serve as senior (last) author, and at least one additional EMBARK Lab collaborator will join as an author on the project. Alternative arrangements can be discussed if mAXED is one of multiple data sources for a project. 

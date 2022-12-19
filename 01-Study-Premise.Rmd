@@ -1,7 +1,14 @@
 # Study Premise
 
-The Body Advocacy Movement Study (Phase 1: 2020-2022) is a pilot study investigating the feasiblility, acceptability, and preliminary efficacy of an eating disorder risk reduction intervention developed by the EMBARK lab in 2020.  
-xxx
+Project MAXED (Phase 1: 2020-) is a study is conducting and investigation of exercise response among girls and young women with eating disorders developed by the EMBARK lab in 2020.  
+
+
+1.1 Specific Aims:
+Driven exercise is a serious and common feature of eating disorders, but current understanding of factors that give rise to and maintain driven exercise is limited. Project MAXED aims to evaluate acute psychobiological response to a bout of moderate-intensity exercise among young females (age 14-22 years) with and without mild-to-moderate eating disorder symptoms. Overall, this study will contribute to the conceptualization of driven exercise and how individuals’ acute biological and affective responses to exercise contribute to risk for and maintenance of driven exercise. This pilot study has two primary aims: 
+
+Aim 1: Confirm feasibility of paradigms evaluating acute response to exercise among outpatient individuals with mild-to-moderate eating disorder symptoms. We will confirm feasibility of our exercise-based tasks via a) study dropout at all timepoints, b) adverse events, c) completion rates of study tasks. Over the course of the study, we expect both eating disorder and healthy control groups to meet thresholds of < 20% dropout, zero adverse events, and > 80% task completion. 
+
+Aim 2: Characterize variability in biobehavioral response to in-lab exercise among individuals with mild-to-moderate eating disorders. We will characterize changes during exercise in state body image, mood, and biological markers in both eating disorder and healthy control groups; we will specifically characterize mean levels of, and variability in, biobehavioral response to exercise across the groups.
 
 
 

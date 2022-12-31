@@ -1,6 +1,6 @@
 --- 
-title: "A Compensated Exercise Study For Girls And Young Women With Eating Disorder Symptoms - Study Procedures and Measures"
-author: "Katherine Schaumberg"
+title: "Multimodal Assessment of Exercise in Eating Disorders (MAXED) - Study Procedures and Measures"
+author: "Katherine Schaumberg, Sabrina Liu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -9,8 +9,9 @@ bibliography: [MAXED_bookdown.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is a package which contains study information, measures, and complete data dictionary for the A Compensated Exercise Study For Girls And Young Women With Eating Disorder Symptoms (Wave 1: 2020-2022)"
+description: "This codebook contains study information, measures, and complete data dictionary for the A Compensated Exercise Study For Girls And Young Women With Eating Disorder Symptoms (Wave 1: 2020-2022)"
 ---
 
-# Introduction 
+# Introduction
 
+This codebook contains study information, measures, and complete data dictionary for the Multimodal Assesment of Exercise in Eating Disorders (MAXED) Study

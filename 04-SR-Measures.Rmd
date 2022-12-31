@@ -14,7 +14,7 @@ Scoring for the CET includes:
 **Key Variables**
 'cet_sum'(defines the severity of compulsive exercise based on number of symptoms)
 
-##Childhood Trauma Questionnaire (CTQ)
+## Childhood Trauma Questionnaire (CTQ)
 Scoring of the Childhood Trauma Questionnaire was developed by David Bernstein and colleagues and includes a 28-item self-report measure (Berstein, et al., 1998). The CTQ is designed to examine traumatic childhood experiences in adults and adolescents. Questions focus on traumatic experiences and examples of abuse and neglect (ie. ctq_not_enough_to_eat, ctq_parents_drunk_high, etc.). Items are scored on a Likert scale from 1 (never true) to 5 (very often true). High scores indicate more trauma (Wright et al., 2001).
 
 **Scoring**
@@ -27,7 +27,7 @@ Scoring of the Childhood Trauma Questionnaire was developed by David Bernstein a
 **Key Variables**
 'ctq_sum' (defines sum score of symptoms)
 
-##Drive for Muscularity (DFM)
+## Drive for Muscularity (DFM)
 Scoring of the Drive for Muscularity was developed to assess an individual’s perception that he or she is not muscular enough and that bulk should be added to his or her body frame, in the form of muscle mass. The survey asks to indicate the extent to which a series of attitudes and behaviors are descriptive of themselves (i.e. “I wish that I were more muscular”) (McCreary, D.R., et al., 2004). The survey is more commonly used by men, but there is reliability, but somewhat low validity in using the scale to survey females, particularly with an eating disorder diagnosis (Carvalho, P., et al., 2019). The Drive for Mascularity (DMS) is a 15 item survey with two lower-order factors: masculinity related attitudes and muscle enhancing behaviors.
 
 **Scoring**
@@ -40,7 +40,7 @@ Scoring of the Drive for Muscularity was developed to assess an individual’s p
 **Key Variables**
 'iuss_sum' (defines sum score of symptoms)
 
-##Intolerance of Uncertainty (IUS)
+## Intolerance of Uncertainty (IUS)
 Scoring of the Intolerance of Uncertainty Scale developed by Freeston, Rhéaume, Letarte, Dugas, and Ladouceur (1994) is a 27 item survey to assess Intolerance of Uncertainty (IU). The Intolerance of Uncertainty Scale (IUS) assesses reaction to four main ideas: uncertainty is stressful and upsetting, uncertainty leads to the inability to act, uncertain events are negative and should be avoided, and being uncertain is unfair (Buhr, K, et al., 2001). It consists of two factors: prospective anxiety (i.e. “I can’t stand being taken by surprise”) and inhibitory anxiety (i.e. “I must get away from all uncertain situations”). Items are rated on a 5-point Likert type scale from 1 ("Not at all characteristic of me") to 5 ("Entirely characteristic of me"). Degree of intolerance was determined by finding the sum or total of all answers. High scores indicate greater IU.
 
 **Scoring**
@@ -53,7 +53,7 @@ Scoring of the Intolerance of Uncertainty Scale developed by Freeston, Rhéaume,
 **Key Variables**
 'muscularity_average' (defines average score of symptoms)
 
-##The Mini Mental State Examination (MMSE)
+## The Mini Mental State Examination (MMSE)
 The Mini Mental State Examination (MMSE) is used to systematically and thoroughly assess cognitive fucntioning, with 11-question measuring five areas: orientation, registration, attention and calculation, recall, and language.  The maximum score is 30.  A score of 23 or lower is indicative of cognitive impairment. It is commonly used in medicine and allied health to screen for dementia. It is also used to estimate the severity and progression of cognitive impairment and to follow the course of cognitive changes in an individual over time.
 
 **Scoring**
@@ -80,7 +80,7 @@ The Mini Mental State Examination (MMSE) is used to systematically and thoroughl
 **Key Variables**
 'upps_average' (defines average score of symptoms)
 
-##Brief Fear of Negative Evaluation Scale Companion File (BFNE)
+## Brief Fear of Negative Evaluation Scale (BFNE)
 Brief Fear of Negative Evaluation Scale is a scale measuring a person's tolerance for the possibility they might be judged disparagingly or hostiley by others.This scale is composed of 12 items describing fearful or worrying cognition. The respondent indicates the extent to which each item describes himself or herself on a Likert scale ranging from 1 'Not at all' to 5 'Extremely'
 
 **Scoring**
@@ -104,14 +104,14 @@ Brief Fear of Negative Evaluation Scale is a scale measuring a person's toleranc
 `bfnes_too_concerned`
 `bfnes_often_worry`
 
-##BIS/BAS Scale
+## BIS/BAS Scale
 The BIS/BAS Scale is a 24-item self-report questionnaire designed by C.S. Carver and T.L. White. The scale is designed to measure two motivational systems: the behavioral inhibition system (BIS), which corresponds to motivation to avoid aversive outcomes, and the behavioral activation system (BAS), which corresponds to motivation to approach goal-oriented outcomes. Participants respond to each item using a 4-point Likert scale: 1 (very true for me), 2 (somewhat true for me), 3 (somewhat false for me), and 4 (very false for me).
 
 **Scoring**
 
 **Key Variables**
 
-##The Body Image States Scale (BISS)
+## The Body Image States Scale (BISS)
 The Body Image States Scale (BISS) is a six-item measure of individuals' evaluation and affect about their physical appearance at a particular moment in time. They score from 0 (least impaired) to 8 (most impaired).
 
 **Scoring**
@@ -131,14 +131,14 @@ The Body Image States Scale (BISS) is a six-item measure of individuals' evaluat
 `biss_looks_pre`
 `biss_average_looks_pre`
 
-##The Difficulties in Emotion Regulation Scale (DERS)
+## The Difficulties in Emotion Regulation Scale (DERS)
 The Difficulties in Emotion Regulation Scale (DERS) is an instrument measuring emotion regulation problems developed by K.L. Gratz and L. Roemer.The self-report scale is comprised of 36 items asking respondents how they relate to their emotions in order to produce scores on 6 different subscales.This tool can be especially useful in helping patients identify areas for growth in how they respond to their emotions, especially those with Borderline Personality Disorder, Generalised Anxiety Disorder or Substance Use Disorder. The DERS scale has been shown to have high internal consistency,  good test–retest reliability, and adequate construct and predictive validity (Gratz & Roemer, 2003).
 
 **Scoring**
 
 **Key Variables**
 
-##Eating Disorder Diagnostic scale (ED History)
+## Eating Disorder Diagnostic scale (ED History)
 Eating Disorder Diagnostic scale, which is a 22-item self-report questionnaire designed to measure Anorexia nervosa, Bulimia nervosa, and Binge-eating disorder symptomatology aligned with the DSM-IV diagnostic criteria. The scale is comprised of a combination of Likert ratings, dichotomous scores, behavioural frequency scores, and open-ended questions asking for weight and height.
 
 **Scoring**
@@ -166,7 +166,7 @@ Eating Disorder Diagnostic scale, which is a 22-item self-report questionnaire d
 `edhistory_diuretics`
 `edhistory_fast`
 
-##Food Cravings Questionnaire(FCQ)
+## Food Cravings Questionnaire(FCQ)
 Food Cravings Questionnaire which is used instrument to assess food cravings as a multidimensional construct. Its 39 items have an underlying nine-factor structure to demonstrate food cravings as well as restrictions.
 
 **Scoring**
@@ -186,7 +186,7 @@ Food Cravings Questionnaire which is used instrument to assess food cravings as 
 `fcq_desire_exercise_pre`
 `fcq_desire_binge_pre`
 
-##Frost Multidimensional Perfectionism Scale (FMPS)
+## Frost Multidimensional Perfectionism Scale (FMPS)
 The Frost Multidimensional Perfectionism Scale (FMPS) is a 35 question self-report measure with four sub-scales of perfectionism. It contains a total of 35 items. These are subsumed to the following, originally six, now four subscales: Concern over mistakes and doubts about actions, Excessive concern with parents’ expectations and evaluation, Excessively high personal standards, Concern with precision, order and organisation. Each item is scored on a 5-point Likert-style scale (1 = strongly disagree; 5= strongly agree) to describe how well each item describes the participant experiences. Scores are derived by summing responses across the questions included in each subscale. High scores on the Organization subscale do not contribute to Total Perfectionism and are not intrinsically problematic, but combined with high scores on the other factors may exacerbate dysfunction.
 
 **Scoring**
@@ -207,14 +207,14 @@ The Frost Multidimensional Perfectionism Scale (FMPS) is a 35 question self-repo
 
 `fmps_total_perfectionism_score` (reflects participant's total perfectionism scores)
 
-##Functions of Exercise Scale (FOE)
+## Functions of Exercise Scale (FOE)
 The Functions of Exercise Scale was developed by Patricia Marten DiBartolo, Linda Lin, Simone Montoya, Heather Neal, and Carey Shaffer. The scale includes two subscales: Weight and Appearance (WA), and Health and Enjoyment (HE). The FES is a 16-item, self-report questionnaire that assesses motivation to exercise. Individuals provide ratings using a 7-item scale from “1 = do not agree” to “7 = strongly agree". FES-HE scores are positively correlated with psychological well-being and physical health. Conversely, FES-WA scores are negatively correlated with depressive and eating disorder symptoms, self-esteem, and physical well-being.
 
 **Scoring**
 
 **Key Variables**
 
-##Menstrual Cycle Information (MCI)
+## Menstrual Cycle Information (MCI)
 The Menstrual Cycle Information is a form of retrospective questionnaires (rating severity of symptoms from memory) that examines the participant's menstrual information and secondary sexual characteristics. It consists 22 questions, including open-ended, yes-no, and likert scales.
 
 **Scoring**
@@ -233,7 +233,7 @@ The Menstrual Cycle Information is a form of retrospective questionnaires (ratin
 
 `mci_hysterectomy` (assess whether participant has had a hysterectomy)
 
-##NVS Self-report
+## NVS Self-report
 The NVS Self-report states questionnaire consists three different parts: the first four questions measuring mental efforts, then six questions assessing body image states, and the last eighteen questions examining food craving intentions.
 
 **Scoring**
@@ -252,7 +252,7 @@ The NVS Self-report states questionnaire consists three different parts: the fir
 
 `nvs_food_craving` (reflects participant's food craving intents)
 
-##physical activity affect scale (PAAS)
+## Physical activity affect scale (PAAS)
 
 **Scoring**
 1. Selects raw variables being used for the current measure
@@ -267,14 +267,14 @@ The NVS Self-report states questionnaire consists three different parts: the fir
 `paas_fatigued_pre`
 `paas_calm_pre`
 
-##State Trait Anxiety Inventory is a self-evaluation (STAI)
+## State Trait Anxiety Inventory is a self-evaluation (STAI)
 The State Trait Anxiety Inventory is a self-evaluation questionnaire developed by Charles D. Spielberger. It can be used in clinical settings to diagnose anxiety and to distinguish it from depressive syndromes. Form Y, its most popular version, has 20 items for assessing trait anxiety and 20 for state anxiety. All items are rated on a 4-point scale, and higher scores indicate greater anxiety.
 
 **Scoring**
 
 **Key Variables**
 
-##Yale-Brown Obsessive Compulsive Scale(YBOCS)
+## Yale-Brown Obsessive Compulsive Scale(YBOCS)
 The Yale-Brown Obsessive Compulsive Scale was developed by Wayne Goodman Dennis Charney, and is designed to rate the types of symptoms in patients with Obsessive Compulsive Disorder and their severity. This rating scale is intended for use as a semi-structured interview. The interview should assess the items in the listed order and use the questions provided. The total score is usually computed from the subscales for obsessions (items 1-5) and compulsions (items 6-10).
 
 **Scoring**

@@ -6,7 +6,7 @@ Depending on data necessary for analysis, this may include providing collaborati
 
 In order to request data use, please complete the following steps: 
 
-**1.** Send an email with the title 'MAXED data use' to embarklab@psychaitry.wisc.edu with the following information: 
+**1.** Send an email with the title 'MAXED data use' to embarklab@psychiatry.wisc.edu with the following information: 
 
   **a.** Name, affiliation, training status and year (e.g. second-year graduate student; post-baccalaureate research coordinator, first-year postdoc, assistant professor)
 

@@ -1,252 +1,355 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Self-Report Measures
 
 ## Compulsive Exercise Test (CET)
-Scoring of the Compulsive Exercise Test was developed by researchers at Loughborough University to assess the primary factors operating in the maintenance of excessive exercise.
 
-**Scoring**
-Scoring for the CET includes: 
-1. selects only variables that are relevant for the current measure
+The Compulsive Exercise Test measures cognitive, affective, and
+behavioral components of excessive exercise in individuals (Taranis et
+al., 2011). There are 24 items that contain 5 subscales which are
+avoidance and rule-driven behavior, weight control exercise, mood
+improvement, lack of exercise enjoyment, and exercise rigidity. Each
+statement is rated on a Likert scale of 1 (never true) to 5 (always
+true), and the score of each subscale is determined by averaging the
+items for that factor. Higher scores indicate greater pathology of
+excessive exercise.
 
-2. Recoded all variables (e.g. changing "never true = 1" to "never true = 0"), renamed necessary variables (e.g. cet_week_repeat to cet_week)
+**Scoring** Scoring for the CET includes: 1. selects only variables that
+are relevant for the current measure
 
-3. Creates a symptom sum score, which gives a count of the number of compulsive exercise symptoms (0-5) that are present for each individual
+2.  Recode all variables (e.g. changing "never true = 1" to "never true
+    = 0"), renamed necessary variables (e.g. cet_week_repeat to
+    cet_week)
 
-**Key Variables**
-'cet_sum'(defines the severity of compulsive exercise based on number of symptoms)
+3.  Creates a symptom sum score, which gives a count of the number of
+    compulsive exercise symptoms (0-5) that are present for each
+    individual
+
+**Key Variables** `cet_sum` (defines the severity of compulsive exercise
+based on number of symptoms)
 
 ## Childhood Trauma Questionnaire (CTQ)
-Scoring of the Childhood Trauma Questionnaire was developed by David Bernstein and colleagues and includes a 28-item self-report measure (Berstein, et al., 1998). The CTQ is designed to examine traumatic childhood experiences in adults and adolescents. Questions focus on traumatic experiences and examples of abuse and neglect (ie. ctq_not_enough_to_eat, ctq_parents_drunk_high, etc.). Items are scored on a Likert scale from 1 (never true) to 5 (very often true). High scores indicate more trauma (Wright et al., 2001).
 
-**Scoring**
-1. Selects only variables that are relevant for the current measure
+The Childhood Trauma Questionnaire (CTQ; Bernstein et al., 1994) is a
+70-item questionnaire designed to measure multiple aspects of trauma in
+childhood. However, we have adapted this questionnaire to only include
+28 items. Each item asks the individual to respond to a specific
+question following the prompt, “When I was growing up…”, and allows
+individuals to respond on a 5-point scale ranging from 1 (“Never True”)
+to 5 (“Very Often True”). There are five sub-scales in this
+questionnaire: emotional abuse, physical abuse, sexual abuse, emotional
+neglect, and physical neglect. There were originally four, physical and
+emotional abuse were combined, but we chose to split them up for better
+accuracy. Each sub-scale is summed individually. High sub-scale scores
+indicate more childhood trauma in that sub-scale, and low scores
+indicate low childhood trauma in that sub-scale.
 
-2. Recoded all necessary variables (e.g. 'Never true =1' to 'never true = 0')
+**Scoring** 1. Selects only variables that are relevant for the current
+measure
 
-3. Creates a symptom sum score, which gives a sum count of the number of symptoms (0-5) that are present for each individual
+2.  Recode all necessary variables (e.g. 'Never true =1' to 'never true
+    = 0')
 
-**Key Variables**
-'ctq_sum' (defines sum score of symptoms)
+3.  Creates a symptom sum score, which gives a sum count of the number
+    of symptoms (0-5) that are present for each individual
+
+**Key Variables** `ctq_sum` (defines sum score of symptoms)
 
 ## Drive for Muscularity (DFM)
-Scoring of the Drive for Muscularity was developed to assess an individual’s perception that he or she is not muscular enough and that bulk should be added to his or her body frame, in the form of muscle mass. The survey asks to indicate the extent to which a series of attitudes and behaviors are descriptive of themselves (i.e. “I wish that I were more muscular”) (McCreary, D.R., et al., 2004). The survey is more commonly used by men, but there is reliability, but somewhat low validity in using the scale to survey females, particularly with an eating disorder diagnosis (Carvalho, P., et al., 2019). The Drive for Mascularity (DMS) is a 15 item survey with two lower-order factors: masculinity related attitudes and muscle enhancing behaviors.
 
-**Scoring**
-1. Selects only variables that are relevant for the current measure
+The Drive for Muscularity Scale is a 15 item questionnaire that assesses
+the perceptions and behaviors surrounding the desire to gain muscles
+(McCreary & Sasse, 2000). Questions are rated on a Likert scale from 1
+(Always) to 6 (Never). The items are then reversed scored and higher sum
+scores indicating higher drive for muscularity.
 
-2. Recoded all necessary variables (e.g. changing "always = 1" to "always = 0")
+**Scoring** 1. Selects only variables that are relevant for the current
+measure
 
-3. Creates a symptom aaverage score, which gives an average count of the number of symptoms (0-5) that are present for each individual
+2.  Items are re-coded to be reversed coded ("1=5, 2=4, 3=3, 4=2, 5=1,
+    6=0")
 
-**Key Variables**
-'iuss_sum' (defines sum score of symptoms)
+3.  Creates a symptom average score, which gives an average count of the
+    number of symptoms (0-5) that are present for each individual
+
+**Key Variables** `muscularity_average` (defines sum score of symptoms)
 
 ## Intolerance of Uncertainty (IUS)
-Scoring of the Intolerance of Uncertainty Scale developed by Freeston, Rhéaume, Letarte, Dugas, and Ladouceur (1994) is a 27 item survey to assess Intolerance of Uncertainty (IU). The Intolerance of Uncertainty Scale (IUS) assesses reaction to four main ideas: uncertainty is stressful and upsetting, uncertainty leads to the inability to act, uncertain events are negative and should be avoided, and being uncertain is unfair (Buhr, K, et al., 2001). It consists of two factors: prospective anxiety (i.e. “I can’t stand being taken by surprise”) and inhibitory anxiety (i.e. “I must get away from all uncertain situations”). Items are rated on a 5-point Likert type scale from 1 ("Not at all characteristic of me") to 5 ("Entirely characteristic of me"). Degree of intolerance was determined by finding the sum or total of all answers. High scores indicate greater IU.
 
-**Scoring**
-1. Selects only variables that are relevant for the current measure
+The IUS-S is a 12 item scale that Carleton et al. (2007) adapted from
+the original 27-item Intolerance of Uncertainty Scale from Freeston et
+al. (1994). It assesses the worry that an individual has about the
+possibility of negative events or outcomes, and there are two subscales
+that address anxious and avoidant aspects of the intolerance. Each item
+is scored using a 5-point Likert scale, and the scores are summed, with
+higher scores signifying a greater intolerance of uncertainty.
 
-2. Recoded all necessary variables (e.g. changing "not at all charachteristic of me = 1" to "not charachteristic of me = 0")
+**Scoring** 1. Selects only variables that are relevant for the current
+measure
 
-3. Creates a symptom aaverage score, which gives an average count of the number of symptoms (0-5) that are present for each individual
+2.  Recoded all necessary variables (e.g. changing "not at all
+    characteristic of me = 1" to "not characteristic of me = 0")
 
-**Key Variables**
-'muscularity_average' (defines average score of symptoms)
+3.  Creates a symptom average score, which gives an average count of the
+    number of symptoms (0-5) that are present for each individual
+
+**Key Variables** `iuss_sum` (defines average score of symptoms)
 
 ## The Mini Mental State Examination (MMSE)
-The Mini Mental State Examination (MMSE) is used to systematically and thoroughly assess cognitive fucntioning, with 11-question measuring five areas: orientation, registration, attention and calculation, recall, and language.  The maximum score is 30.  A score of 23 or lower is indicative of cognitive impairment. It is commonly used in medicine and allied health to screen for dementia. It is also used to estimate the severity and progression of cognitive impairment and to follow the course of cognitive changes in an individual over time.
 
-**Scoring**
-1. selects only the variables that are relevant for the current measure
+The Mini Mental State Examination (MMSE) assesses cognitive ability and
+is frequently used to screen for dementia and examine the severity and
+progression of cognitive impairment (Kurlowicz & Wallace, 1999). The
+five categories measured are orientation, registration, attention and
+calculation, recall, and language. There are 11 items on the
+examination, and the scores range from 0-30, with a score 23 or below
+signaling cognitive impairment.
 
-2. rename raw variables to appropraite names that are easy to understand
+**Scoring** 1. selects only the variables that are relevant for the
+current measure
 
-3. recode old variables to make it consistent that score 0 equals to zero in the scoresheet.
+2.  Renames raw variables
 
-4. select only a few columns that will go into the final dataset
-
-**Key Variables**
-`mmse_total` (sum of a participant's score)
-
-##Urgency, Premeditation (lack of), Perseverance (lack of), Sensation Seeking, Positive Urgency, Impulsive Behavior Scale (UPPS-P Scale)
-
-**Scoring**
-1. Selects only variables that are relevant for the current measure
-
-2. Recoded all necessary variables (e.g. 'agree strongly = 1' to 'agree strongly = 0')
-
-3. Creates a symptom aaverage score, which gives an average count of the number of symptoms (0-3) that are present for each individual
-
-**Key Variables**
-'upps_average' (defines average score of symptoms)
+**Key Variables** `mmse_total` (sum of a participant's score)
 
 ## Brief Fear of Negative Evaluation Scale (BFNE)
-Brief Fear of Negative Evaluation Scale is a scale measuring a person's tolerance for the possibility they might be judged disparagingly or hostiley by others.This scale is composed of 12 items describing fearful or worrying cognition. The respondent indicates the extent to which each item describes himself or herself on a Likert scale ranging from 1 'Not at all' to 5 'Extremely'
 
-**Scoring**
-1. Selects raw variables being used for the current measure
+Leary (1983) shortened the Fear of Negative Evaluation Scale (Watson &
+Friend, 1969) to create the BFNE. It measures the tolerance to the
+possibility of judgment from others. There are 12 items that use a
+Likert scale (1 'Not at all' to 5 'Extremely') to rate how
+characteristic each statement is of the respondent. The items are summed
+to create a total score where higher scores indicate greater fear of
+negative evaluation.
 
-2. Renames variables to be easily identified
+**Scoring** 1. Selects raw variables being used for the current measure
 
-3. Sum the total scores and rename this summary as bfne_sum
+2.  Re-code variables to new variable names and values (e.g. 'Not at all
+    characteristic of me =1' to 'Not at all characteristic of me =0')
 
-**Key Variables**
-`bfnes_worry_think`
-`bfnes_unconcerned_think`
-`bfnes_frequently_afraid`
-`bfnes_rarely_worry`
-`bfnes_afraid_approve`
-`bfnes_afraid_fault`
-`bfnes_other_opinions`
-`bfnes_when_talking`
-`bfnes_usually_worried`
-`bfnes_if_judging`
-`bfnes_too_concerned`
-`bfnes_often_worry`
+3.  Sum the total scores
+
+**Key Variables** `bfnes_sum`
 
 ## BIS/BAS Scale
-The BIS/BAS Scale is a 24-item self-report questionnaire designed by C.S. Carver and T.L. White. The scale is designed to measure two motivational systems: the behavioral inhibition system (BIS), which corresponds to motivation to avoid aversive outcomes, and the behavioral activation system (BAS), which corresponds to motivation to approach goal-oriented outcomes. Participants respond to each item using a 4-point Likert scale: 1 (very true for me), 2 (somewhat true for me), 3 (somewhat false for me), and 4 (very false for me).
 
-**Scoring**
+The Behavioral Activation System (BAS) and Behavioral Inhibition System
+(BIS) scales were developed by Carver and White (1994) to assess how
+individuals respond to situations. Each statement is rated on a 4-point
+scale of how strongly one thinks that the statement applies to
+themselves. The BAS, which is the extent to which someone acts to gain
+rewards or positive outcomes, has three sub-scales: reward
+responsiveness, drive and fun seeking. There is one sub-scale for BIS,
+which is the extent to which someone acts to avoid negative outcomes.
 
-**Key Variables**
+**Scoring** 1. Selects all relevant variables
+
+2.  Adds variables `bis_ambitious` `bis_all_out` `bis_act_now`
+    `bis_no_hold` get `bas_drive`.
+3.  Adds variables `bis_explore` `bis_fun` `bis_spontaneous`
+    `bis_crave_excite` to get `bas_fun_seeking`
+4.  Adds variables `bis_love_doing` `bis_excitement`
+    `bis_opportunity_excite` `bis_positive_effect` `bis_excite_win` to
+    get `bas_reward_responsiveness`
+5.  Adds variables `bis_negative_event_fear` `bis_criticism`
+    `bis_angry bis_worked_up` `bis_worry_poor_perform` `bis_no_fear`
+    `bis_worry_for_mistake` to get `bis_sum`
+
+**Key Variables** `bis_sum` `bas_drive` `bas_fun_seeking`
+`bas_reward_responsiveness`
 
 ## The Body Image States Scale (BISS)
-The Body Image States Scale (BISS) is a six-item measure of individuals' evaluation and affect about their physical appearance at a particular moment in time. They score from 0 (least impaired) to 8 (most impaired).
 
-**Scoring**
-1. Selects raw variables being used for the current measure
+The Body Image States Scale (BISS) is a six-item measure of individuals'
+evaluation and affect about their physical appearance at a particular
+moment in time. They score from 0 (least impaired) to 8 (most impaired).
 
-2. Renames variables to be easily identified
+**Scoring** 1. Selects raw variables being used for the current measure
 
-3. Recode variables so that the least impaired = 0 and the most impaired = 8
+2.  Renames variables to be easily identified
 
-4. Sum the total scores and rename this summary as biss_sum
+3.  Recode variables so that the least impaired = 0 and the most
+    impaired = 8
 
-**Key Variables**
-`biss_appearance_pre`
-`biss_body_size_pre`
-`biss_weight_pre`
-`biss_attractive_pre`
-`biss_looks_pre`
+4.  Sum the total scores and rename this summary as biss_sum
+
+**Key Variables** `biss_appearance_pre` `biss_body_size_pre`
+`biss_weight_pre` `biss_attractive_pre` `biss_looks_pre`
 `biss_average_looks_pre`
 
 ## The Difficulties in Emotion Regulation Scale (DERS)
-The Difficulties in Emotion Regulation Scale (DERS) is an instrument measuring emotion regulation problems developed by K.L. Gratz and L. Roemer.The self-report scale is comprised of 36 items asking respondents how they relate to their emotions in order to produce scores on 6 different subscales.This tool can be especially useful in helping patients identify areas for growth in how they respond to their emotions, especially those with Borderline Personality Disorder, Generalised Anxiety Disorder or Substance Use Disorder. The DERS scale has been shown to have high internal consistency,  good test–retest reliability, and adequate construct and predictive validity (Gratz & Roemer, 2003).
+
+The Difficulties in Emotion Regulation Scale (DERS) is an instrument
+measuring emotion regulation problems developed by K.L. Gratz and L.
+Roemer.The self-report scale is comprised of 36 items asking respondents
+how they relate to their emotions in order to produce scores on 6
+different subscales.This tool can be especially useful in helping
+patients identify areas for growth in how they respond to their
+emotions, especially those with Borderline Personality Disorder,
+Generalised Anxiety Disorder or Substance Use Disorder. The DERS scale
+has been shown to have high internal consistency, good test–retest
+reliability, and adequate construct and predictive validity (Gratz &
+Roemer, 2003).
 
 **Scoring**
 
 **Key Variables**
 
 ## Eating Disorder Diagnostic scale (ED History)
-Eating Disorder Diagnostic scale, which is a 22-item self-report questionnaire designed to measure Anorexia nervosa, Bulimia nervosa, and Binge-eating disorder symptomatology aligned with the DSM-IV diagnostic criteria. The scale is comprised of a combination of Likert ratings, dichotomous scores, behavioural frequency scores, and open-ended questions asking for weight and height.
 
-**Scoring**
-1. Selects raw variables being used for the current measure
+Eating Disorder Diagnostic scale, which is a 22-item self-report
+questionnaire designed to measure Anorexia nervosa, Bulimia nervosa, and
+Binge-eating disorder symptomatology aligned with the DSM-IV diagnostic
+criteria. The scale is comprised of a combination of Likert ratings,
+dichotomous scores, behavioural frequency scores, and open-ended
+questions asking for weight and height.
 
-2. Renames variables to be easily identified
+**Scoring** 1. Selects raw variables being used for the current measure
 
-3. Sum the total scores and rename this summary as edhistory_sum
+2.  Renames variables to be easily identified
 
-**Key Variables**
-`edhistory_weightloss`
-`edhistory_fear_fat`
-`edhistory_feel_fat`
-`edhistory_thin`
-`edhistory_danger`
-`edhistory_limit_food`
-`edhistory_concentrate`
-`edhistory_binge`
-`edhistory_not_hungry`
-`edhistory_alone`
-`edhistory_guilt`
-`edhistory_upset`
-`edhistory_self_vomit`
-`edhistory_laxatives`
-`edhistory_diuretics`
-`edhistory_fast`
+3.  Sum the total scores and rename this summary as edhistory_sum
+
+**Key Variables** `edhistory_weightloss` `edhistory_fear_fat`
+`edhistory_feel_fat` `edhistory_thin` `edhistory_danger`
+`edhistory_limit_food` `edhistory_concentrate` `edhistory_binge`
+`edhistory_not_hungry` `edhistory_alone` `edhistory_guilt`
+`edhistory_upset` `edhistory_self_vomit` `edhistory_laxatives`
+`edhistory_diuretics` `edhistory_fast`
 
 ## Food Cravings Questionnaire(FCQ)
-Food Cravings Questionnaire which is used instrument to assess food cravings as a multidimensional construct. Its 39 items have an underlying nine-factor structure to demonstrate food cravings as well as restrictions.
 
-**Scoring**
-1. Selects raw variables being used for the current measure
+Food Cravings Questionnaire which is used instrument to assess food
+cravings as a multidimensional construct. Its 39 items have an
+underlying nine-factor structure to demonstrate food cravings as well as
+restrictions.
 
-2. Renames variables to be easily identified
+**Scoring** 1. Selects raw variables being used for the current measure
 
-3. Recode variables so that "strongly disagree" = 0 and "strongly agree" = 4
+2.  Renames variables to be easily identified
 
-4. Sum the total scores and rename this summary as fcq_sum
+3.  Recode variables so that "strongly disagree" = 0 and "strongly
+    agree" = 4
 
-**Key Variables**
-`fcq_desire_restrict_pre`
-`fcq_desire_fast_pre`
-`fcq_desire_vomit_pre`
-`fcq_desire_laxatives_pre`
-`fcq_desire_exercise_pre`
-`fcq_desire_binge_pre`
+4.  Sum the total scores and rename this summary as fcq_sum
+
+**Key Variables** `fcq_desire_restrict_pre` `fcq_desire_fast_pre`
+`fcq_desire_vomit_pre` `fcq_desire_laxatives_pre`
+`fcq_desire_exercise_pre` `fcq_desire_binge_pre`
 
 ## Frost Multidimensional Perfectionism Scale (FMPS)
-The Frost Multidimensional Perfectionism Scale (FMPS) is a 35 question self-report measure with four sub-scales of perfectionism. It contains a total of 35 items. These are subsumed to the following, originally six, now four subscales: Concern over mistakes and doubts about actions, Excessive concern with parents’ expectations and evaluation, Excessively high personal standards, Concern with precision, order and organisation. Each item is scored on a 5-point Likert-style scale (1 = strongly disagree; 5= strongly agree) to describe how well each item describes the participant experiences. Scores are derived by summing responses across the questions included in each subscale. High scores on the Organization subscale do not contribute to Total Perfectionism and are not intrinsically problematic, but combined with high scores on the other factors may exacerbate dysfunction.
 
-**Scoring**
-1. selects only the variables that are relevant for the current measure
+The Frost Multidimensional Perfectionism Scale (FMPS) is a 35 question
+self-report measure with four sub-scales of perfectionism. It contains a
+total of 35 items. These are subsumed to the following, originally six,
+now four subscales: Concern over mistakes and doubts about actions,
+Excessive concern with parents’ expectations and evaluation, Excessively
+high personal standards, Concern with precision, order and organisation.
+Each item is scored on a 5-point Likert-style scale (1 = strongly
+disagree; 5= strongly agree) to describe how well each item describes
+the participant experiences. Scores are derived by summing responses
+across the questions included in each subscale. High scores on the
+Organization subscale do not contribute to Total Perfectionism and are
+not intrinsically problematic, but combined with high scores on the
+other factors may exacerbate dysfunction.
 
-2. creates six additional variables based on sum scores reflecting six subscales of the questionnaire: m. It contains a total of 35 items. These are subsumed to the following, originally six, now four subscales: Concern over mistakes and doubts about actions, Excessive concern with parents’ expectations and evaluation, Excessively high personal standards, Concern with precision, order and organisation 
+**Scoring** 1. selects only the variables that are relevant for the
+current measure
 
-3. select only a few columns that will go into the final dataset
+2.  creates six additional variables based on sum scores reflecting six
+    subscales of the questionnaire: m. It contains a total of 35 items.
+    These are subsumed to the following, originally six, now four
+    subscales: Concern over mistakes and doubts about actions, Excessive
+    concern with parents’ expectations and evaluation, Excessively high
+    personal standards, Concern with precision, order and organisation
 
-**Key Variables**
-`fmps_concerns_mistakes` (reflects participant's concern over mistakes and doubts about actions)
+3.  select only a few columns that will go into the final dataset
 
-`fmps_concerns_parents_expectations` (reflects participant's excessive concern with parents’ expectations and evaluation)
+**Key Variables** `fmps_concerns_mistakes` (reflects participant's
+concern over mistakes and doubts about actions)
 
-`fmps_high_personal_standards` (reflects participant's excessively high personal standards)
+`fmps_concerns_parents_expectations` (reflects participant's excessive
+concern with parents’ expectations and evaluation)
 
-`fmps_concerns_precision_order` (reflects participant's Concern with precision, order and organisation )
+`fmps_high_personal_standards` (reflects participant's excessively high
+personal standards)
 
-`fmps_total_perfectionism_score` (reflects participant's total perfectionism scores)
+`fmps_concerns_precision_order` (reflects participant's Concern with
+precision, order and organisation )
+
+`fmps_total_perfectionism_score` (reflects participant's total
+perfectionism scores)
 
 ## Functions of Exercise Scale (FOE)
-The Functions of Exercise Scale was developed by Patricia Marten DiBartolo, Linda Lin, Simone Montoya, Heather Neal, and Carey Shaffer. The scale includes two subscales: Weight and Appearance (WA), and Health and Enjoyment (HE). The FES is a 16-item, self-report questionnaire that assesses motivation to exercise. Individuals provide ratings using a 7-item scale from “1 = do not agree” to “7 = strongly agree". FES-HE scores are positively correlated with psychological well-being and physical health. Conversely, FES-WA scores are negatively correlated with depressive and eating disorder symptoms, self-esteem, and physical well-being.
+
+The Functions of Exercise Scale was developed by Patricia Marten
+DiBartolo, Linda Lin, Simone Montoya, Heather Neal, and Carey Shaffer.
+The scale includes two subscales: Weight and Appearance (WA), and Health
+and Enjoyment (HE). The FES is a 16-item, self-report questionnaire that
+assesses motivation to exercise. Individuals provide ratings using a
+7-item scale from “1 = do not agree” to “7 = strongly agree". FES-HE
+scores are positively correlated with psychological well-being and
+physical health. Conversely, FES-WA scores are negatively correlated
+with depressive and eating disorder symptoms, self-esteem, and physical
+well-being.
 
 **Scoring**
 
 **Key Variables**
 
 ## Menstrual Cycle Information (MCI)
-The Menstrual Cycle Information is a form of retrospective questionnaires (rating severity of symptoms from memory) that examines the participant's menstrual information and secondary sexual characteristics. It consists 22 questions, including open-ended, yes-no, and likert scales.
 
-**Scoring**
-1. selects only the variables that are relevant for the current measure
+The Menstrual Cycle Information is a form of retrospective
+questionnaires (rating severity of symptoms from memory) that examines
+the participant's menstrual information and secondary sexual
+characteristics. It consists 22 questions, including open-ended, yes-no,
+and
 
-2. rename raw variables to appropraite names that are easy to understand
+**Scoring** 1. selects only the variables that are relevant for the
+current measure
 
-3. recode old variables to make it consistent that no equals to zero in the scoresheet
+2.  rename raw variables to appropraite names that are easy to
+    understand
 
-4. select only a few columns that will go into the final dataset
+3.  recode old variables to make it consistent that no equals to zero in
+    the scoresheet
 
-**Key Variables**
-`mci_estimate` (assess whether participant can reliably estimate the stages of her cycle)
+4.  select only a few columns that will go into the final dataset
+
+**Key Variables** `mci_estimate` (assess whether participant can
+reliably estimate the stages of her cycle)
 
 `mci_public_hair` (reflects participant's public hair development)
 
 `mci_hysterectomy` (assess whether participant has had a hysterectomy)
 
 ## NVS Self-report
-The NVS Self-report states questionnaire consists three different parts: the first four questions measuring mental efforts, then six questions assessing body image states, and the last eighteen questions examining food craving intentions.
 
-**Scoring**
-1. selects only the variables that are relevant for the current measure
+The NVS Self-report states questionnaire consists three different parts:
+the first four questions measuring mental efforts, then six questions
+assessing body image states, and the last eighteen questions examining
+food craving intentions.
 
-2. rename raw variables to appropraite names that are easy to understand
+**Scoring** 1. selects only the variables that are relevant for the
+current measure
 
-3. creates three additional variables based on sum scores reflecting three components of the questionnaire: mental efforts, body image states, and food craving. Meanwhile, recode old variables to make it consistent that "strongly disagree" and "extremely dissatisfied" equal to zero
+2.  rename raw variables to appropraite names that are easy to
+    understand
 
-4. select only a few columns that will go into the final dataset
+3.  creates three additional variables based on sum scores reflecting
+    three components of the questionnaire: mental efforts, body image
+    states, and food craving. Meanwhile, recode old variables to make it
+    consistent that "strongly disagree" and "extremely dissatisfied"
+    equal to zero
 
-**Key Variables**
-`nvs_mental_effort` (reflects participant's mental effort scores)
+4.  select only a few columns that will go into the final dataset
+
+**Key Variables** `nvs_mental_effort` (reflects participant's mental
+effort scores)
 
 `nvs_body_image` (reflects participant's body image satisfication)
 
@@ -254,30 +357,38 @@ The NVS Self-report states questionnaire consists three different parts: the fir
 
 ## Physical activity affect scale (PAAS)
 
-**Scoring**
-1. Selects raw variables being used for the current measure
+**Scoring** 1. Selects raw variables being used for the current measure
 
-2. Renames variables to be easily identified
+2.  Renames variables to be easily identified
 
-3. Sum the total scores and rename this summary as biss_sum
+3.  Sum the total scores and rename this summary as biss_sum
 
-**Key Variables**
-`paas_enthusiastic_pre`
-`paas_crummy_pre`
-`paas_fatigued_pre`
-`paas_calm_pre`
+**Key Variables** `paas_enthusiastic_pre` `paas_crummy_pre`
+`paas_fatigued_pre` `paas_calm_pre`
 
 ## State Trait Anxiety Inventory is a self-evaluation (STAI)
-The State Trait Anxiety Inventory is a self-evaluation questionnaire developed by Charles D. Spielberger. It can be used in clinical settings to diagnose anxiety and to distinguish it from depressive syndromes. Form Y, its most popular version, has 20 items for assessing trait anxiety and 20 for state anxiety. All items are rated on a 4-point scale, and higher scores indicate greater anxiety.
+
+The State Trait Anxiety Inventory is a self-evaluation questionnaire
+developed by Charles D. Spielberger. It can be used in clinical settings
+to diagnose anxiety and to distinguish it from depressive syndromes.
+Form Y, its most popular version, has 20 items for assessing trait
+anxiety and 20 for state anxiety. All items are rated on a 4-point
+scale, and higher scores indicate greater anxiety.
 
 **Scoring**
 
 **Key Variables**
 
 ## Yale-Brown Obsessive Compulsive Scale(YBOCS)
-The Yale-Brown Obsessive Compulsive Scale was developed by Wayne Goodman Dennis Charney, and is designed to rate the types of symptoms in patients with Obsessive Compulsive Disorder and their severity. This rating scale is intended for use as a semi-structured interview. The interview should assess the items in the listed order and use the questions provided. The total score is usually computed from the subscales for obsessions (items 1-5) and compulsions (items 6-10).
+
+The Yale-Brown Obsessive Compulsive Scale was developed by Wayne Goodman
+Dennis Charney, and is designed to rate the types of symptoms in
+patients with Obsessive Compulsive Disorder and their severity. This
+rating scale is intended for use as a semi-structured interview. The
+interview should assess the items in the listed order and use the
+questions provided. The total score is usually computed from the
+subscales for obsessions (items 1-5) and compulsions (items 6-10).
 
 **Scoring**
 
 **Key Variables**
-

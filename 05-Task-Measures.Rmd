@@ -1,1 +1,16 @@
 # Task Measures
+
+## Markov (PHASE 1)
+
+## Work For Money
+
+ Work For Money (WFM) is a behavioral task that assesses the relationship between effort and reward. Participants are asked to complete a series of tasks in exchange for monetary rewards. The task is designed to measure the amount of effort participants are willing to exert for different levels of reward, providing insight into their motivation and decision-making processes.
+ 
+In the pilot of the study participants were asked to click the space bar a certain amount of times and they would earn $3 for the completion of the level. 
+
+## Inquisit (PHASE 2)
+
+
+##
+
+

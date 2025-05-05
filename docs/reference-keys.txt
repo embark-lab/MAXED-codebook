@@ -32,3 +32,8 @@ work-for-money
 work-for-exercise
 inquisit-phase-2
 section
+ema
+inquist-phase-2
+effort-expenditure-for-rewards-task
+two-step-decision
+data-collection-form

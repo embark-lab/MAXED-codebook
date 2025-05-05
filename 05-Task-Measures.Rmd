@@ -2,24 +2,36 @@
 
 ## Markov (PHASE 1)
 
-
-
+The Markov task is a behavioral task that assesses decision-making and risk-taking behavior. Participants are presented with a series of choices between different options, each with varying levels of risk and reward. The task is designed to measure how participants weigh the potential benefits and drawbacks of their choices, providing insight into their cognitive processes and risk preferences.
 
 ## Work For Money
 
- Work For Money (WFM) is a behavioral task that assesses the relationship between effort and reward. Participants are asked to complete a series of tasks in exchange for monetary rewards. The task is designed to measure the amount of effort participants are willing to exert for different levels of reward, providing insight into their motivation and decision-making processes.
- 
-In the pilot of the study participants were asked to click the space bar a certain amount of times and they would earn $3 for the completion of the level. There were 10 of these levels, with each one gradually increasing the amount of time 
+Work For Money (WFM) is a behavioral task that assesses the relationship between effort and reward. Participants are asked to complete a series of tasks in exchange for monetary rewards. The task is designed to measure th e amount of effort participants are willing to exert for different levels of reward, providing insight into their motivation and decision-making processes.
 
-## Work For Exercise 
+In the pilot of the study participants were asked to click the space bar a certain amount of times and they would earn \$3 for the completion of the level. There were 10 of these levels, with each one gradually increasing the amount of times they need to hit the space bar.
+
+In the current version of the study, there are 6 levels, with participants earning \$5 per level.
+
+## Work For Exercise
+
 Work For Exercise (WFE) is a behavioral task that assesses the relationship between effort and reward in the context of physical activity. Participants are asked to complete a series of exercise tasks in exchange for time to exercise in the later task . The task is designed to measure the amount of effort participants are willing to exert for different levels of reward, providing insight into their motivation and decision-making processes.
 
+In the pilot of the study participants were asked to click the space bar a certain amount of times and they were told they would add 3 minutes of exercise per completion of each level. There were 10 of these levels, with each one gradually increasing the amount of times they need to hit the space bar.
 
+In the current version of the study, there are 6 levels, with participants earning 5 minutes per level.
 
+## Inquist (PHASE 2)
 
-## Inquisit (PHASE 2)
+### Effort Expenditure for Rewards Task
 
+Participants have to select between an Easy and a Hard task. Both tasks involve pressing the space bar for a predetermined amount of time. The Hard task offers more money (in this script: 8 variable amounts) but is harder and takes twice as long. Participants make their selection knowingly under 3 different win probabilities (aka they might not win money even if they are successful; particularly not if the win probabilities are low).
 
-##
+### Two-Step Decision
 
+This tasks replaced the Markov Task in the pilot version of the study. Two choice options A1 and A2 are available, which lead to two intermediate outcomes B1 and B2 at different probabilities. Intermediate outcomes B1 and B2 lead to rewards with different probabilities. Participants are instructed to try to earn as much treasure as they can.
 
+## Data Collection Form 
+
+The Data collection form collects biological data (height and weight at first visit; blood pressure and heart rate at the beginning and end of the visit), physiological data (heart rate, RPM, distance and watts during exercise tasks; heart rate during rest task), and affect data in both the rest task and exercise task (Borg RPE and BISS scales).
+
+The Rating of Perceived Exertion Scale (BORG RPE) is a scale used to measure exertion from a scale of 6 (no exertion) to 20 (maximum effort). Participants are asked to rate their exertion every 5 minutes during both the exercise task and the rest task.

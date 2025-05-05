@@ -392,3 +392,9 @@ subscales for obsessions (items 1-5) and compulsions (items 6-10).
 **Scoring**
 
 **Key Variables**
+
+## EMA 
+
+Lab generated measures to assess eating disorder behaviors and cognitions both immediately before and after attending study visits.
+
+

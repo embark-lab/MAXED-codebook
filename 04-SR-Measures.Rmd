@@ -32,6 +32,29 @@ are relevant for the current measure
 **Key Variables** `cet_sum` (defines the severity of compulsive exercise
 based on number of symptoms)
 
+**All Variables**
+
+```{r}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(DT)
+
+# Load the dataset
+cet <- read_xlsx("CET.xlsx")
+
+# Create an interactive datatable with a search box
+datatable(cet, 
+          caption = "CET Variables",
+          options = list(
+            pageLength = 10,
+            autoWidth = TRUE
+          ))
+
+
+
+```
+
 ## Childhood Trauma Questionnaire (CTQ)
 
 The Childhood Trauma Questionnaire (CTQ; Bernstein et al., 1994) is a
@@ -58,6 +81,12 @@ measure
     of symptoms (0-5) that are present for each individual
 
 **Key Variables** `ctq_sum` (defines sum score of symptoms)
+
+**All Variables**
+
+```{r}
+
+```
 
 ## Drive for Muscularity (DFM)
 
@@ -393,8 +422,7 @@ subscales for obsessions (items 1-5) and compulsions (items 6-10).
 
 **Key Variables**
 
-## EMA 
+## EMA
 
-Lab generated measures to assess eating disorder behaviors and cognitions both immediately before and after attending study visits.
-
-
+Lab generated measures to assess eating disorder behaviors and
+cognitions both immediately before and after attending study visits.

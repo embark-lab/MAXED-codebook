@@ -34,7 +34,7 @@ based on number of symptoms)
 
 **All Variables**
 
-```{r}
+```{r, echo=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)

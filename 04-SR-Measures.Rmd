@@ -380,7 +380,7 @@ htmltools::tagList(
 
 
 
-## ED History  ***(MAXED only- only from participants 17-42) 
+## ED History  ***(MAXED-PHASE 1 only- only from participants ids 17-42) 
 The Eating Disorder History form is a self-report questionnaire that assess participants history of eating disorder symptoms and behaviors. Questions vary from yes/no to text entry to Likert scale.
 
 

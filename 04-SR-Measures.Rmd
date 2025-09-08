@@ -34,58 +34,26 @@ based on number of symptoms)
 
 **All Variables**
 
-```{r, echo=FALSE}
-library(knitr)
-library(kableExtra)
+```{r, echo=FALSE, results='asis'}
 library(readxl)
 library(DT)
+library(htmltools)
+library(dplyr)
 
-# Load the dataset
+# Load data
 cet <- read_xlsx("CET.xlsx")
 
-# Create an interactive datatable with a search box
-datatable(cet, 
-          caption = "CET Variables",
-          options = list(
-            pageLength = 10,
-            autoWidth = TRUE
-          ))
+# Create the DT widget 
+dt <- datatable(cet,
+                caption = "CET Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
 
-
-
-```
-
-## Childhood Trauma Questionnaire (CTQ)
-
-The Childhood Trauma Questionnaire (CTQ; Bernstein et al., 1994) is a
-70-item questionnaire designed to measure multiple aspects of trauma in
-childhood. However, we have adapted this questionnaire to only include
-28 items. Each item asks the individual to respond to a specific
-question following the prompt, “When I was growing up…”, and allows
-individuals to respond on a 5-point scale ranging from 1 (“Never True”)
-to 5 (“Very Often True”). There are five sub-scales in this
-questionnaire: emotional abuse, physical abuse, sexual abuse, emotional
-neglect, and physical neglect. There were originally four, physical and
-emotional abuse were combined, but we chose to split them up for better
-accuracy. Each sub-scale is summed individually. High sub-scale scores
-indicate more childhood trauma in that sub-scale, and low scores
-indicate low childhood trauma in that sub-scale.
-
-**Scoring** 1. Selects only variables that are relevant for the current
-measure
-
-2.  Recode all necessary variables (e.g. 'Never true =1' to 'never true
-    = 0')
-
-3.  Creates a symptom sum score, which gives a sum count of the number
-    of symptoms (0-5) that are present for each individual
-
-**Key Variables** `ctq_sum` (defines sum score of symptoms)
-
-**All Variables**
-
-```{r}
-
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand CET Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
 ```
 
 ## Drive for Muscularity (DFM)
@@ -106,6 +74,25 @@ measure
     number of symptoms (0-5) that are present for each individual
 
 **Key Variables** `muscularity_average` (defines sum score of symptoms)
+
+**All Variables**
+
+```{r, echo=FALSE, results='asis'}
+dfm <- read_xlsx("Data_dictionary/DFM.xlsx")
+# Create the DT widget
+dt <- datatable(dfm,
+                caption = "DFM Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand DFM Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+```
 
 ## Intolerance of Uncertainty (IUS)
 
@@ -128,6 +115,38 @@ measure
 
 **Key Variables** `iuss_sum` (defines average score of symptoms)
 
+**All Variables**
+
+```{r, echo=FALSE, results='asis'}
+
+codebook <- read_xlsx("codebook.xlsx")
+
+mr21_codebook <- read.csv("Data_dictionary/mr21_codebook.csv")
+
+#filter variable "Form Name" in codebook to have intolerance_of_uncertainty_scale_short_form_iuss
+ius <- codebook %>%
+  filter(`Form Name` == "intolerance_of_uncertainty_scale_short_form_iuss") 
+
+#keep only columns 1, 5, 6
+ius <- ius[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(ius,
+                caption = "IUS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand IUS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
+
 ## The Mini Mental State Examination (MMSE)
 
 The Mini Mental State Examination (MMSE) assesses cognitive ability and
@@ -144,6 +163,34 @@ current measure
 2.  Renames raw variables
 
 **Key Variables** `mmse_total` (sum of a participant's score)
+
+**All Variables**
+
+```{r, echo=FALSE, results='asis'}
+
+#filter variable "Form Name" in codebook to have intolerance_of_uncertainty_scale_short_form_iuss
+mmse <- codebook %>%
+  filter(`Form Name` == "minimental_state_exam_mmse") 
+
+#keep only columns 1, 5, 6
+mmse <- mmse[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(mmse,
+                caption = "IUS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand MMSE Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
 
 ## Brief Fear of Negative Evaluation Scale (BFNE)
 
@@ -163,11 +210,30 @@ negative evaluation.
 3.  Sum the total scores
 
 **Key Variables** `bfnes_sum`
+```{r, echo=FALSE, results='asis'}
+bfnes <- codebook |> 
+  filter(`Form Name` == "brief_fear_of_negative_evaluation_scale") 
+
+bfnes <- bfnes[, c(1, 5, 6)]
+
+# Create the DT widget
+dt <- datatable(bfnes,
+                caption = "BFNES Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BFNES Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+  
+```
+
 
 ## BIS/BAS Scale
 
-The Behavioral Activation System (BAS) and Behavioral Inhibition System
-(BIS) scales were developed by Carver and White (1994) to assess how
+The Behavioral Avoidance/Inhibition Scale scales were developed by Carver and White (1994) to assess how
 individuals respond to situations. Each statement is rated on a 4-point
 scale of how strongly one thinks that the statement applies to
 themselves. The BAS, which is the extent to which someone acts to gain
@@ -191,11 +257,32 @@ which is the extent to which someone acts to avoid negative outcomes.
 **Key Variables** `bis_sum` `bas_drive` `bas_fun_seeking`
 `bas_reward_responsiveness`
 
+```{r, echo=FALSE, results='asis'}
+bis <- codebook |> 
+  filter(`Form Name` == "behavioral_avoidanceinhibition_scales")
+bis <- bis[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(bis,
+                caption = "BIS/BAS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BIS/BAS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+```
+
+
 ## The Body Image States Scale (BISS)
 
 The Body Image States Scale (BISS) is a six-item measure of individuals'
-evaluation and affect about their physical appearance at a particular
-moment in time. They score from 0 (least impaired) to 8 (most impaired).
+evaluation and affect about their body image at the current moment of time. The questions are answered on a 9-point Likert scale. 
+
+These questions are asked in our NVS Self-Report States pre and mid and post surveys AND our PVS pre and post questionnaires. They are also asked during both Rest tasks and exercise tasks and can be found in the Data Collection Forms for Day A, B, and C. 
 
 **Scoring** 1. Selects raw variables being used for the current measure
 
@@ -210,32 +297,92 @@ moment in time. They score from 0 (least impaired) to 8 (most impaired).
 `biss_weight_pre` `biss_attractive_pre` `biss_looks_pre`
 `biss_average_looks_pre`
 
+```{r, echo=FALSE, results='asis'}
+library(stringr)
+biss <- codebook |> 
+ filter(
+    str_detect(`Variable / Field Name`, 
+               "biss|rest_bis|ex_phys|ex_shap|ex_wt|ex_attract|ex_looks|ex_avg")
+  )
+  
+  filter(`Form Name` == "body_image_states_scale_biss")
+
+biss <- biss[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(biss,
+                caption = "BISS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BISS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+```
+
+
 ## The Difficulties in Emotion Regulation Scale (DERS)
 
 The Difficulties in Emotion Regulation Scale (DERS) is an instrument
 measuring emotion regulation problems developed by K.L. Gratz and L.
 Roemer.The self-report scale is comprised of 36 items asking respondents
 how they relate to their emotions in order to produce scores on 6
-different subscales.This tool can be especially useful in helping
-patients identify areas for growth in how they respond to their
-emotions, especially those with Borderline Personality Disorder,
-Generalised Anxiety Disorder or Substance Use Disorder. The DERS scale
-has been shown to have high internal consistency, good test–retest
-reliability, and adequate construct and predictive validity (Gratz &
-Roemer, 2003).
+different subscales. These subscales include: 
 
-**Scoring**
+1.  Nonacceptance of emotional responses (Nonacceptance)
+2.  Difficulties engaging in goal-directed behavior (Goals)
+3.  Impulse control difficulties (Impulse)
+4.  Lack of emotional awareness (Awareness)
+5.  Limited access to emotion regulation strategies (Strategies)
+6.  Lack of emotional clarity (Clarity)
+
+**Scoring** 
+1. Selects raw variables being used for the current measure
+2.  Renames MAXED (Phase 1) variables to be easily identified (rename them to match MR21 variables listed below)
+3. For MAXED variables only: add subscale variables 
+  Nonacceptance: ders_11, ders_12, ders_21, ders_23, ders_25, ders_29
+  Goals: ders_13, ders_18, ders_20_rs, ders_26, ders_33
+  Impulse: ders_3, ders_14, ders_19, ders_24_rs, ders_27,ders_32
+  Lack of emotional awareness: ders_2_rs, ders_6_rs, ders_8_rs, ders_10_rs, ders_17_rs, ders_34_rs
+  Limited access to emotion regulation strategies: ders_15, ders_16, ders_22_rs, ders_28, ders_30, ders_31, ders_35, ders_36
+  Lack of emotional clarity: ders_1_rs, ders_4, ders_5, ders_7_rs, ders_9
+  
 
 **Key Variables**
+For MR21: 'ders_nonacceptance_score' 'ders_goal_direct_score' 'ders_impulse_score' 'ders_emotion_aware_score' 
+'ders_limited_strat_score' 'ders_clarity_score'
 
-## Eating Disorder Diagnostic scale (ED History)
+```{r, echo=FALSE, results='asis'}
 
-Eating Disorder Diagnostic scale, which is a 22-item self-report
-questionnaire designed to measure Anorexia nervosa, Bulimia nervosa, and
-Binge-eating disorder symptomatology aligned with the DSM-IV diagnostic
-criteria. The scale is comprised of a combination of Likert ratings,
-dichotomous scores, behavioural frequency scores, and open-ended
-questions asking for weight and height.
+ders <- codebook %>%
+  filter(`Form Name` == "difficulty_in_emotion_regulation_scale_ders") 
+
+#keep only columns 1, 5, 6
+ders <- ders[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(ders,
+                caption = "DERS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand DERS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
+
+
+
+## ED History  ***(MAXED only- only from participants 17-42) 
+The Eating Disorder History form is a self-report questionnaire that assess participants history of eating disorder symptoms and behaviors. Questions vary from yes/no to text entry to Likert scale.
+
 
 **Scoring** 1. Selects raw variables being used for the current measure
 
@@ -250,12 +397,33 @@ questions asking for weight and height.
 `edhistory_upset` `edhistory_self_vomit` `edhistory_laxatives`
 `edhistory_diuretics` `edhistory_fast`
 
-## Food Cravings Questionnaire(FCQ)
+```{r, echo=FALSE, results='asis'}
 
-Food Cravings Questionnaire which is used instrument to assess food
-cravings as a multidimensional construct. Its 39 items have an
-underlying nine-factor structure to demonstrate food cravings as well as
-restrictions.
+edhis <- codebook %>%
+  filter(`Form Name` == "ed_history") 
+
+#keep only columns 1, 5, 6
+edhis <- edhis[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(edhis,
+                caption = "DERS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand ED History Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
+## (FCQ)
+The FCQ is a self report questionnaire that measures an individuals desire to engage in certain eating disorder behaviors like binging, restricting, and exercising. The questions are rated on a 5-point Likert scale from 1 (strongly disagree) to 5 (strongly agree). These set of 18 questions can be found in the NVS pre, mid, and post questionnaires and the PVS pre and post questionnaires. 
+
 
 **Scoring** 1. Selects raw variables being used for the current measure
 
@@ -270,127 +438,125 @@ restrictions.
 `fcq_desire_vomit_pre` `fcq_desire_laxatives_pre`
 `fcq_desire_exercise_pre` `fcq_desire_binge_pre`
 
+```{r, echo=FALSE, results='asis'}
+
+fcq <- codebook %>%
+filter(
+    str_detect(`Variable / Field Name`, 
+               "nvs_fcq|pvs_fcq")
+  )
+
+#keep only columns 1, 5, 6
+fcq <- fcq[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(fcq,
+                caption = "FCQ Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand FCQ Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+```
+
 ## Frost Multidimensional Perfectionism Scale (FMPS)
 
 The Frost Multidimensional Perfectionism Scale (FMPS) is a 35 question
-self-report measure with four sub-scales of perfectionism. It contains a
-total of 35 items. These are subsumed to the following, originally six,
-now four subscales: Concern over mistakes and doubts about actions,
+self-report measure with four sub-scales of perfectionism. There are four subscales: Concern over mistakes and doubts about actions,
 Excessive concern with parents’ expectations and evaluation, Excessively
 high personal standards, Concern with precision, order and organisation.
 Each item is scored on a 5-point Likert-style scale (1 = strongly
 disagree; 5= strongly agree) to describe how well each item describes
 the participant experiences. Scores are derived by summing responses
-across the questions included in each subscale. High scores on the
-Organization subscale do not contribute to Total Perfectionism and are
-not intrinsically problematic, but combined with high scores on the
-other factors may exacerbate dysfunction.
+across the questions included in each subscale.
+
+MR21 only has 20 of the 35 questions (contains Concerns over mistakes and doubts about actions and Excessive concern with parents' expectations and evaluations), while MAXED has all 35.
 
 **Scoring** 1. selects only the variables that are relevant for the
 current measure
 
-2.  creates six additional variables based on sum scores reflecting six
-    subscales of the questionnaire: m. It contains a total of 35 items.
-    These are subsumed to the following, originally six, now four
-    subscales: Concern over mistakes and doubts about actions, Excessive
-    concern with parents’ expectations and evaluation, Excessively high
-    personal standards, Concern with precision, order and organisation
+2.  creates six additional variables based on sum scores reflecting four
+    subscales of the questionnaire:
+    
+  Concern over mistakes and doubts about actions: 
+  
+  MR21: 'fmps_mistakes_actions_score'
+  
+  MAXED: fmps_mistake_upset + fmps_work_failure + fmps_worse_fail + fmps_partial_fail + fmps_careful + fmps_less_best + fmps_negative_mistake + fmps_inferior + fmps_respect + fmps_doubt + fmps_repeat + fmps_long_time + fmps_mistake_likeness
+  
+  
+Excessively high personal standards score
+  
+  MR21: fmps_standards_score
+  MAXED: fmps_self_standard + fmps_competent + fmps_higher_goal + fmps_focus + fmps_extreme_goal + fmps_lower_standard + fmps_high_perform
+ 
 
-3.  select only a few columns that will go into the final dataset
+ 
+```{r, echo=FALSE, results='asis'}
 
-**Key Variables** `fmps_concerns_mistakes` (reflects participant's
-concern over mistakes and doubts about actions)
+fmps <- codebook %>%
+filter(`Form Name` == "frost_multidimensional_perfectionism_scale") 
 
-`fmps_concerns_parents_expectations` (reflects participant's excessive
-concern with parents’ expectations and evaluation)
+#keep only columns 1, 5, 6
+fmps <- fmps[, c(1, 5, 6)]
 
-`fmps_high_personal_standards` (reflects participant's excessively high
-personal standards)
 
-`fmps_concerns_precision_order` (reflects participant's Concern with
-precision, order and organisation )
 
-`fmps_total_perfectionism_score` (reflects participant's total
-perfectionism scores)
 
-## Functions of Exercise Scale (FOE)
+# Create the DT widget
+dt <- datatable(fmps,
+                caption = "FMPS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand FMPS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
 
-The Functions of Exercise Scale was developed by Patricia Marten
-DiBartolo, Linda Lin, Simone Montoya, Heather Neal, and Carey Shaffer.
-The scale includes two subscales: Weight and Appearance (WA), and Health
-and Enjoyment (HE). The FES is a 16-item, self-report questionnaire that
-assesses motivation to exercise. Individuals provide ratings using a
-7-item scale from “1 = do not agree” to “7 = strongly agree". FES-HE
-scores are positively correlated with psychological well-being and
-physical health. Conversely, FES-WA scores are negatively correlated
-with depressive and eating disorder symptoms, self-esteem, and physical
-well-being.
+```
 
-**Scoring**
+ 
+
+
+## Functional Assessment of Driven Exercise (FADE)/ Functional Assessment of Maladaptive Behaviors (FAMB)
+
+MAXED: The FAMB, adapted by the lab for exercise, is a 22 item questionnaire that assess for maladaptive exercise behavior. Items include : " I exercise to cope/relieve stress" or  Questions are scored on a 5-point Likert scale from 1 (never) to 5 (always).
+
+MR21: The FADE is a 28 item questionnaire that assesses for driven exercise similar to the FAMB. The questions also include assessement of control. Questions are scored on a 4-point Likert scale from 0 (never) to 3 (often). There are four subscales: Autonomic Positive Reinforcement, Autonomic Negative Reinforcement, Social Positive Reinforcement, and Social Negative Reinforcement.
+
 
 **Key Variables**
+For MR21: 
+'fade_apr_score' 'fade_anr_score' 'fade_spr_score' 'fade_snr_score' 
+
+```{r, echo=FALSE, results='asis'}
+
+```
+
 
 ## Menstrual Cycle Information (MCI)
 
-The Menstrual Cycle Information is a form of retrospective
-questionnaires (rating severity of symptoms from memory) that examines
-the participant's menstrual information and secondary sexual
-characteristics. It consists 22 questions, including open-ended, yes-no,
-and
+The MCI is a questionnaire that assesses an individual's menstrual cycle and pubertal development. It consists of 21 total items.
 
-**Scoring** 1. selects only the variables that are relevant for the
-current measure
-
-2.  rename raw variables to appropraite names that are easy to
-    understand
-
-3.  recode old variables to make it consistent that no equals to zero in
-    the scoresheet
-
-4.  select only a few columns that will go into the final dataset
-
-**Key Variables** `mci_estimate` (assess whether participant can
-reliably estimate the stages of her cycle)
-
-`mci_public_hair` (reflects participant's public hair development)
-
-`mci_hysterectomy` (assess whether participant has had a hysterectomy)
-
-## NVS Self-report
-
-The NVS Self-report states questionnaire consists three different parts:
-the first four questions measuring mental efforts, then six questions
-assessing body image states, and the last eighteen questions examining
-food craving intentions.
-
-**Scoring** 1. selects only the variables that are relevant for the
-current measure
-
-2.  rename raw variables to appropraite names that are easy to
-    understand
-
-3.  creates three additional variables based on sum scores reflecting
-    three components of the questionnaire: mental efforts, body image
-    states, and food craving. Meanwhile, recode old variables to make it
-    consistent that "strongly disagree" and "extremely dissatisfied"
-    equal to zero
-
-4.  select only a few columns that will go into the final dataset
-
-**Key Variables** `nvs_mental_effort` (reflects participant's mental
-effort scores)
-
-`nvs_body_image` (reflects participant's body image satisfication)
-
-`nvs_food_craving` (reflects participant's food craving intents)
 
 ## Physical activity affect scale (PAAS)
+
+The PAAS is a 12-item self-report measure that assesses momentary affect response to exercise. Both phases of the study have adapted a shorter scale. MAXED has four items asking how 1) Enthusiastic 2) Crummy 3) Fatigued 4) Calm they feel at the moment. MR21 added in the middle of the study a fifth item, Anxious.  Items are rated from  0 (Do Not Feel) to 4 (Feel Very Strongly). 
+
+These questions can be found in the NVS pre, mid, and post questionnaires and the PVS pre and post questionnaires. They are also asked during both Rest tasks and exercise tasks and can be found in the Data Collection Forms for Day A, B, and C. In MR21, they can be found in the EMA questionnaires as well. 
 
 **Scoring** 1. Selects raw variables being used for the current measure
 
 2.  Renames variables to be easily identified
 
-3.  Sum the total scores and rename this summary as biss_sum
+3.  Sum the total scores and rename this summary as paas_sum
 
 **Key Variables** `paas_enthusiastic_pre` `paas_crummy_pre`
 `paas_fatigued_pre` `paas_calm_pre`
@@ -408,7 +574,7 @@ scale, and higher scores indicate greater anxiety.
 
 **Key Variables**
 
-## Yale-Brown Obsessive Compulsive Scale(YBOCS)
+## Yale-Brown Obsessive Compulsive Scale (YBOCS)
 
 The Yale-Brown Obsessive Compulsive Scale was developed by Wayne Goodman
 Dennis Charney, and is designed to rate the types of symptoms in
@@ -426,3 +592,31 @@ subscales for obsessions (items 1-5) and compulsions (items 6-10).
 
 Lab generated measures to assess eating disorder behaviors and
 cognitions both immediately before and after attending study visits.
+
+#MR21 Measures only 
+
+## ED100k-Plus 
+
+The ED100k-Plus is an adapted version of the Ed100k. It is a self report measure that assesses current and history of an eating disorder and includes weight history questions. It includes questions about binge eating, compensatory behaviors, restriction and other eating disorder symptoms.
+
+
+
+
+## GAD-7 
+
+
+## PHQ-9 
+
+
+## RCADs Youth Self Assessment
+
+
+## Cross Cutting Symptom Adult 
+
+
+## Cross Cutting Symptom Child
+
+
+
+
+

@@ -48,15 +48,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -71,9 +73,6 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 \usepackage{bookmark}
@@ -81,13 +80,13 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={Multimodal Assessment of Exercise in Eating Disorders (MAXED) - Study Procedures and Measures},
-  pdfauthor={Katherine Schaumberg, Sabrina Liu},
+  pdfauthor={Katherine Schaumberg, Mahathi Gavuji, Caitlynn Rudd},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{Multimodal Assessment of Exercise in Eating Disorders (MAXED) - Study Procedures and Measures}
-\author{Katherine Schaumberg, Sabrina Liu}
-\date{2025-03-17}
+\author{Katherine Schaumberg, Mahathi Gavuji, Caitlynn Rudd}
+\date{2025-09-22}
 
 \begin{document}
 \maketitle
@@ -145,7 +144,7 @@ The second wave of this study (MR21) will include the recruitment of 100 (50 con
 
 \section{Recruitment}\label{recruitment}
 
-Recruitment sources include: (1) University Health Services at UW-Madison and other area colleges and universities (2) flyers at area businesses (e.g.~fitness centers, coffee shops) (3) local mental health providers, including providers within Wisconsin Psychiatric Institute and Clinic (WisPIC), as well as outside of the UW settings (e.g., at Community Mental Health Centers, private practices, etc.) (4) online advertisement on social media platforms (5) Personal recruitment by study staff, (6) campus e-mail recruitment.
+Recruitment sources included: (1) University Health Services at UW-Madison and other area colleges and universities (2) flyers at area businesses (e.g.~fitness centers, coffee shops) (3) local mental health providers, including providers within Wisconsin Psychiatric Institute and Clinic (WisPIC), as well as outside of the UW settings (e.g., at Community Mental Health Centers, private practices, etc.) (4) online advertisement on social media platforms (5) Personal recruitment by study staff, (6) campus e-mail recruitment.
 
 \chapter{Interventions}\label{interventions}
 
@@ -165,7 +164,7 @@ On Day C, participants will complete Task 2: Threat (rest condition),which will 
 
 Additionally, Task Day B will be scheduled during the follicular phase to control for possible menstrual phase effects on the biological response to exercise. Menstrual phase will be further clarified and controlled by the collection of blood samples on Task Day B to quantify estradiol levels. Participants will also complete a reinforcement learning task following Day A and Day B to examine the acute impact of exercise on reinforcement learning mechanisms. Day A, Day B, and Day C will each last about 2 hours. Lastly, participants will be provided with a fitness tracker to wear for 7 days between the screening visit and their second visit to objectively determine average levels of physical activity.
 
-\chapter{Self-Report Measures}\label{self-report-measures}
+\chapter{Self-Report Measures (Shared across MAXED and MAXED R21MH131787)}\label{self-report-measures-shared-across-maxed-and-maxed-r21mh131787}
 
 \section{Compulsive Exercise Test (CET)}\label{compulsive-exercise-test-cet}
 
@@ -174,7 +173,7 @@ behavioral components of excessive exercise in individuals (Taranis et
 al., 2011). There are 24 items that contain 5 subscales which are
 avoidance and rule-driven behavior, weight control exercise, mood
 improvement, lack of exercise enjoyment, and exercise rigidity. Each
-statement is rated on a Likert scale of 1 (never true) to 5 (always
+statement is rated on a Likert scale of 0 (never true) to 5 (always
 true), and the score of each subscale is determined by averaging the
 items for that factor. Higher scores indicate greater pathology of
 excessive exercise.
@@ -198,37 +197,38 @@ are relevant for the current measure
 \textbf{Key Variables} \texttt{cet\_sum} (defines the severity of compulsive exercise
 based on number of symptoms)
 
-\section{Childhood Trauma Questionnaire (CTQ)}\label{childhood-trauma-questionnaire-ctq}
+MR21: \texttt{cet\_total}: sum of all items
 
-The Childhood Trauma Questionnaire (CTQ; Bernstein et al., 1994) is a
-70-item questionnaire designed to measure multiple aspects of trauma in
-childhood. However, we have adapted this questionnaire to only include
-28 items. Each item asks the individual to respond to a specific
-question following the prompt, ``When I was growing up\ldots{}'', and allows
-individuals to respond on a 5-point scale ranging from 1 (``Never True'')
-to 5 (``Very Often True''). There are five sub-scales in this
-questionnaire: emotional abuse, physical abuse, sexual abuse, emotional
-neglect, and physical neglect. There were originally four, physical and
-emotional abuse were combined, but we chose to split them up for better
-accuracy. Each sub-scale is summed individually. High sub-scale scores
-indicate more childhood trauma in that sub-scale, and low scores
-indicate low childhood trauma in that sub-scale.
+\texttt{cet\_clinical}: meets clinical cutoff
 
-\textbf{Scoring} 1. Selects only variables that are relevant for the current
-measure
+\texttt{cet\_avoid\_subscale} : avoidance and rule-driven behavior subscale score
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\item
-  Recode all necessary variables (e.g.~`Never true =1' to `never true
-  = 0')
-\item
-  Creates a symptom sum score, which gives a sum count of the number
-  of symptoms (0-5) that are present for each individual
-\end{enumerate}
+\texttt{cet\_weight\_subscale} : weight control exercise subscale score
 
-\textbf{Key Variables} \texttt{ctq\_sum} (defines sum score of symptoms)
+\texttt{cet\_mood\_subscale} : mood improvement subscale score
+
+\texttt{cet\_enjoy\_subscale} : lack of exercise enjoyment subscale score
+
+\texttt{cet\_rigid\_subscale} : exercise rigidity subscale score
+
+\textbf{All Variables}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
 
 \section{Drive for Muscularity (DFM)}\label{drive-for-muscularity-dfm}
 
@@ -237,6 +237,9 @@ the perceptions and behaviors surrounding the desire to gain muscles
 (McCreary \& Sasse, 2000). Questions are rated on a Likert scale from 1
 (Always) to 6 (Never). The items are then reversed scored and higher sum
 scores indicating higher drive for muscularity.
+
+MR21 variables are already reverse coded: 0 being Never and 5 being
+Always.
 
 \textbf{Scoring} 1. Selects only variables that are relevant for the current
 measure
@@ -252,9 +255,12 @@ measure
   number of symptoms (0-5) that are present for each individual
 \end{enumerate}
 
-\textbf{Key Variables} \texttt{muscularity\_average} (defines sum score of symptoms)
+\textbf{Key Variables} MAXED: \texttt{muscularity\_average} (average score of all
+items) MR21: \texttt{dfm\_average} (average score of all items)
 
-\section{Intolerance of Uncertainty (IUS)}\label{intolerance-of-uncertainty-ius}
+\textbf{All Variables}
+
+\section{Intolerance of Uncertaint-Short Form (IUS-S)}\label{intolerance-of-uncertaint-short-form-ius-s}
 
 The IUS-S is a 12 item scale that Carleton et al.~(2007) adapted from
 the original 27-item Intolerance of Uncertainty Scale from Freeston et
@@ -263,6 +269,9 @@ possibility of negative events or outcomes, and there are two subscales
 that address anxious and avoidant aspects of the intolerance. Each item
 is scored using a 5-point Likert scale, and the scores are summed, with
 higher scores signifying a greater intolerance of uncertainty.
+
+MR21 codes items on a scale of 0-4, with 0 being ``not at all
+characteristic of me'' and 4 being ``entirely characteristic of me''.
 
 \textbf{Scoring} 1. Selects only variables that are relevant for the current
 measure
@@ -278,7 +287,15 @@ measure
   number of symptoms (0-5) that are present for each individual
 \end{enumerate}
 
-\textbf{Key Variables} \texttt{iuss\_sum} (defines average score of symptoms)
+\textbf{Key Variables} MAXED: \texttt{iuss\_sum} (defines average score of symptoms)
+
+\begin{verbatim}
+              MR21: `iuss_prospective_score` (Prospective Anxiety Subscale Score)
+                    `iuss_inhibitory_score` (Inhibitory Anxiety Subscale Score)
+                    `iuss_sum_score` (Total Score)
+\end{verbatim}
+
+\textbf{All Variables}
 
 \section{The Mini Mental State Examination (MMSE)}\label{the-mini-mental-state-examination-mmse}
 
@@ -303,6 +320,8 @@ current measure
 
 \textbf{Key Variables} \texttt{mmse\_total} (sum of a participant's score)
 
+\textbf{All Variables}
+
 \section{Brief Fear of Negative Evaluation Scale (BFNE)}\label{brief-fear-of-negative-evaluation-scale-bfne}
 
 Leary (1983) shortened the Fear of Negative Evaluation Scale (Watson \&
@@ -325,18 +344,20 @@ negative evaluation.
   Sum the total scores
 \end{enumerate}
 
-\textbf{Key Variables} \texttt{bfnes\_sum}
+\textbf{Key Variables} MAXED: \texttt{bfnes\_sum} (Total BFNES score) MR21:
+\texttt{bfnes\_sum\_score} (Total BFNES score) \texttt{bfnes\_clinical} (clincal cutoff
+criteria met)
 
 \section{BIS/BAS Scale}\label{bisbas-scale}
 
-The Behavioral Activation System (BAS) and Behavioral Inhibition System
-(BIS) scales were developed by Carver and White (1994) to assess how
-individuals respond to situations. Each statement is rated on a 4-point
-scale of how strongly one thinks that the statement applies to
-themselves. The BAS, which is the extent to which someone acts to gain
-rewards or positive outcomes, has three sub-scales: reward
-responsiveness, drive and fun seeking. There is one sub-scale for BIS,
-which is the extent to which someone acts to avoid negative outcomes.
+The Behavioral Avoidance/Inhibition Scale scales were developed by
+Carver and White (1994) to assess how individuals respond to situations.
+Each statement is rated on a 4-point scale of how strongly one thinks
+that the statement applies to themselves. The BAS, which is the extent
+to which someone acts to gain rewards or positive outcomes, has three
+sub-scales: reward responsiveness, drive and fun seeking. There is one
+sub-scale for BIS, which is the extent to which someone acts to avoid
+negative outcomes.
 
 \textbf{Scoring} 1. Selects all relevant variables
 
@@ -366,8 +387,13 @@ which is the extent to which someone acts to avoid negative outcomes.
 \section{The Body Image States Scale (BISS)}\label{the-body-image-states-scale-biss}
 
 The Body Image States Scale (BISS) is a six-item measure of individuals'
-evaluation and affect about their physical appearance at a particular
-moment in time. They score from 0 (least impaired) to 8 (most impaired).
+evaluation and affect about their body image at the current moment of
+time. The questions are answered on a 9-point Likert scale.
+
+These questions are asked in our NVS Self-Report States pre and mid and
+post surveys AND our PVS pre and post questionnaires. They are also
+asked during both Rest tasks and exercise tasks and can be found in the
+Data Collection Forms for Day A, B, and C.
 
 \textbf{Scoring} 1. Selects raw variables being used for the current measure
 
@@ -393,26 +419,46 @@ The Difficulties in Emotion Regulation Scale (DERS) is an instrument
 measuring emotion regulation problems developed by K.L. Gratz and L.
 Roemer.The self-report scale is comprised of 36 items asking respondents
 how they relate to their emotions in order to produce scores on 6
-different subscales.This tool can be especially useful in helping
-patients identify areas for growth in how they respond to their
-emotions, especially those with Borderline Personality Disorder,
-Generalised Anxiety Disorder or Substance Use Disorder. The DERS scale
-has been shown to have high internal consistency, good test--retest
-reliability, and adequate construct and predictive validity (Gratz \&
-Roemer, 2003).
+different subscales. These subscales include:
 
-\textbf{Scoring}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Nonacceptance of emotional responses (Nonacceptance)
+\item
+  Difficulties engaging in goal-directed behavior (Goals)
+\item
+  Impulse control difficulties (Impulse)
+\item
+  Lack of emotional awareness (Awareness)
+\item
+  Limited access to emotion regulation strategies (Strategies)
+\item
+  Lack of emotional clarity (Clarity)
+\end{enumerate}
 
-\textbf{Key Variables}
+\textbf{Scoring} 1. Selects raw variables being used for the current measure
+2. Renames MAXED (Phase 1) variables to be easily identified (rename
+them to match MR21 variables listed below) 3. For MAXED variables only:
+add subscale variables Nonacceptance: ders\_11, ders\_12, ders\_21,
+ders\_23, ders\_25, ders\_29 Goals: ders\_13, ders\_18, ders\_20\_rs, ders\_26,
+ders\_33 Impulse: ders\_3, ders\_14, ders\_19, ders\_24\_rs, ders\_27,ders\_32
+Lack of emotional awareness: ders\_2\_rs, ders\_6\_rs, ders\_8\_rs,
+ders\_10\_rs, ders\_17\_rs, ders\_34\_rs Limited access to emotion regulation
+strategies: ders\_15, ders\_16, ders\_22\_rs, ders\_28, ders\_30, ders\_31,
+ders\_35, ders\_36 Lack of emotional clarity: ders\_1\_rs, ders\_4, ders\_5,
+ders\_7\_rs, ders\_9
 
-\section{Eating Disorder Diagnostic scale (ED History)}\label{eating-disorder-diagnostic-scale-ed-history}
+\textbf{Key Variables} For MR21: `ders\_nonacceptance\_score'
+`ders\_goal\_direct\_score' `ders\_impulse\_score' `ders\_emotion\_aware\_score'
+`ders\_limited\_strat\_score' `ders\_clarity\_score'
 
-Eating Disorder Diagnostic scale, which is a 22-item self-report
-questionnaire designed to measure Anorexia nervosa, Bulimia nervosa, and
-Binge-eating disorder symptomatology aligned with the DSM-IV diagnostic
-criteria. The scale is comprised of a combination of Likert ratings,
-dichotomous scores, behavioural frequency scores, and open-ended
-questions asking for weight and height.
+\section{ED History ***(MAXED-PHASE 1 only- only from participants ids 17-42)}\label{ed-history-maxed-phase-1-only--only-from-participants-ids-17-42}
+
+The Eating Disorder History form is a self-report questionnaire that
+assess participants history of eating disorder symptoms and behaviors.
+Questions vary from yes/no to text entry to Likert scale.
 
 \textbf{Scoring} 1. Selects raw variables being used for the current measure
 
@@ -432,12 +478,14 @@ questions asking for weight and height.
 \texttt{edhistory\_upset} \texttt{edhistory\_self\_vomit} \texttt{edhistory\_laxatives}
 \texttt{edhistory\_diuretics} \texttt{edhistory\_fast}
 
-\section{Food Cravings Questionnaire(FCQ)}\label{food-cravings-questionnairefcq}
+\section{Food Craving Questionnaire}\label{food-craving-questionnaire}
 
-Food Cravings Questionnaire which is used instrument to assess food
-cravings as a multidimensional construct. Its 39 items have an
-underlying nine-factor structure to demonstrate food cravings as well as
-restrictions.
+The FCQ used in our study is a self report questionnaire that is adapted
+to measure an individuals desire to engage in certain eating disorder
+behaviors like binging, restricting, and exercising. The questions are
+rated on a 5-point Likert scale from 1 (strongly disagree) to 5
+(strongly agree). These set of 18 questions can be found in the NVS pre,
+mid, and post questionnaires and the PVS pre and post questionnaires.
 
 \textbf{Scoring} 1. Selects raw variables being used for the current measure
 
@@ -460,18 +508,18 @@ restrictions.
 \section{Frost Multidimensional Perfectionism Scale (FMPS)}\label{frost-multidimensional-perfectionism-scale-fmps}
 
 The Frost Multidimensional Perfectionism Scale (FMPS) is a 35 question
-self-report measure with four sub-scales of perfectionism. It contains a
-total of 35 items. These are subsumed to the following, originally six,
-now four subscales: Concern over mistakes and doubts about actions,
+self-report measure with four sub-scales of perfectionism. There are
+four subscales: Concern over mistakes and doubts about actions,
 Excessive concern with parents' expectations and evaluation, Excessively
 high personal standards, Concern with precision, order and organisation.
 Each item is scored on a 5-point Likert-style scale (1 = strongly
 disagree; 5= strongly agree) to describe how well each item describes
 the participant experiences. Scores are derived by summing responses
-across the questions included in each subscale. High scores on the
-Organization subscale do not contribute to Total Perfectionism and are
-not intrinsically problematic, but combined with high scores on the
-other factors may exacerbate dysfunction.
+across the questions included in each subscale.
+
+MR21 only has 20 of the 35 questions (contains Concerns over mistakes
+and doubts about actions and Excessive concern with parents'
+expectations and evaluations), while MAXED has all 35.
 
 \textbf{Scoring} 1. selects only the variables that are relevant for the
 current measure
@@ -479,114 +527,63 @@ current measure
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
+\tightlist
 \item
-  creates six additional variables based on sum scores reflecting six
-  subscales of the questionnaire: m. It contains a total of 35 items.
-  These are subsumed to the following, originally six, now four
-  subscales: Concern over mistakes and doubts about actions, Excessive
-  concern with parents' expectations and evaluation, Excessively high
-  personal standards, Concern with precision, order and organisation
-\item
-  select only a few columns that will go into the final dataset
+  creates six additional variables based on sum scores reflecting four
+  subscales of the questionnaire:
 \end{enumerate}
 
-\textbf{Key Variables} \texttt{fmps\_concerns\_mistakes} (reflects participant's
-concern over mistakes and doubts about actions)
+Concern over mistakes and doubts about actions:
 
-\texttt{fmps\_concerns\_parents\_expectations} (reflects participant's excessive
-concern with parents' expectations and evaluation)
+MR21: `fmps\_mistakes\_actions\_score'
 
-\texttt{fmps\_high\_personal\_standards} (reflects participant's excessively high
-personal standards)
+MAXED: fmps\_mistake\_upset + fmps\_work\_failure + fmps\_worse\_fail +
+fmps\_partial\_fail + fmps\_careful + fmps\_less\_best +
+fmps\_negative\_mistake + fmps\_inferior + fmps\_respect + fmps\_doubt +
+fmps\_repeat + fmps\_long\_time + fmps\_mistake\_likeness
 
-\texttt{fmps\_concerns\_precision\_order} (reflects participant's Concern with
-precision, order and organisation )
+Excessively high personal standards score
 
-\texttt{fmps\_total\_perfectionism\_score} (reflects participant's total
-perfectionism scores)
+MR21: fmps\_standards\_score MAXED: fmps\_self\_standard + fmps\_competent +
+fmps\_higher\_goal + fmps\_focus + fmps\_extreme\_goal +
+fmps\_lower\_standard + fmps\_high\_perform
 
-\section{Functions of Exercise Scale (FOE)}\label{functions-of-exercise-scale-foe}
+\section{Functional Assessment of Driven Exercise (FADE)/ Functional Assessment of Maladaptive Behaviors (FAMB)}\label{functional-assessment-of-driven-exercise-fade-functional-assessment-of-maladaptive-behaviors-famb}
 
-The Functions of Exercise Scale was developed by Patricia Marten
-DiBartolo, Linda Lin, Simone Montoya, Heather Neal, and Carey Shaffer.
-The scale includes two subscales: Weight and Appearance (WA), and Health
-and Enjoyment (HE). The FES is a 16-item, self-report questionnaire that
-assesses motivation to exercise. Individuals provide ratings using a
-7-item scale from ``1 = do not agree'' to ``7 = strongly agree''. FES-HE
-scores are positively correlated with psychological well-being and
-physical health. Conversely, FES-WA scores are negatively correlated
-with depressive and eating disorder symptoms, self-esteem, and physical
-well-being.
+MAXED: The FAMB, adapted by the lab for exercise, is a 22 item
+questionnaire that assess for maladaptive exercise behavior. Items
+include : '' I exercise to cope/relieve stress'' or Questions are scored
+on a 5-point Likert scale from 1 (never) to 5 (always).
 
-\textbf{Scoring}
+MR21: The FADE is a 28 item questionnaire that assesses for driven
+exercise similar to the FAMB. The questions also include assessement of
+control. Questions are scored on a 4-point Likert scale from 0 (never)
+to 3 (often). There are four subscales: Autonomic Positive
+Reinforcement, Autonomic Negative Reinforcement, Social Positive
+Reinforcement, and Social Negative Reinforcement.
 
-\textbf{Key Variables}
+\textbf{Key Variables} For MR21: `fade\_apr\_score' `fade\_anr\_score'
+`fade\_spr\_score' `fade\_snr\_score'
 
-\section{Menstrual Cycle Information (MCI)}\label{menstrual-cycle-information-mci}
+\section{Menstrual Cycle Information (MCI ***MAXED only)}\label{menstrual-cycle-information-mci-maxed-only}
 
-The Menstrual Cycle Information is a form of retrospective
-questionnaires (rating severity of symptoms from memory) that examines
-the participant's menstrual information and secondary sexual
-characteristics. It consists 22 questions, including open-ended, yes-no,
-and
-
-\textbf{Scoring} 1. selects only the variables that are relevant for the
-current measure
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\item
-  rename raw variables to appropraite names that are easy to
-  understand
-\item
-  recode old variables to make it consistent that no equals to zero in
-  the scoresheet
-\item
-  select only a few columns that will go into the final dataset
-\end{enumerate}
-
-\textbf{Key Variables} \texttt{mci\_estimate} (assess whether participant can
-reliably estimate the stages of her cycle)
-
-\texttt{mci\_public\_hair} (reflects participant's public hair development)
-
-\texttt{mci\_hysterectomy} (assess whether participant has had a hysterectomy)
-
-\section{NVS Self-report}\label{nvs-self-report}
-
-The NVS Self-report states questionnaire consists three different parts:
-the first four questions measuring mental efforts, then six questions
-assessing body image states, and the last eighteen questions examining
-food craving intentions.
-
-\textbf{Scoring} 1. selects only the variables that are relevant for the
-current measure
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
-\item
-  rename raw variables to appropraite names that are easy to
-  understand
-\item
-  creates three additional variables based on sum scores reflecting
-  three components of the questionnaire: mental efforts, body image
-  states, and food craving. Meanwhile, recode old variables to make it
-  consistent that ``strongly disagree'' and ``extremely dissatisfied''
-  equal to zero
-\item
-  select only a few columns that will go into the final dataset
-\end{enumerate}
-
-\textbf{Key Variables} \texttt{nvs\_mental\_effort} (reflects participant's mental
-effort scores)
-
-\texttt{nvs\_body\_image} (reflects participant's body image satisfication)
-
-\texttt{nvs\_food\_craving} (reflects participant's food craving intents)
+The MCI is a questionnaire that assesses an individual's menstrual cycle
+and pubertal development. It consists of 21 total items.
 
 \section{Physical activity affect scale (PAAS)}\label{physical-activity-affect-scale-paas}
+
+The PAAS is a 12-item self-report measure that assesses momentary affect
+response to exercise. Both phases of the study have adapted a shorter
+scale. MAXED has four items asking how 1) Enthusiastic 2) Crummy 3)
+Fatigued 4) Calm they feel at the moment. MR21 added in the middle of
+the study a fifth item, Anxious (Starting from id MR21-1\_028 and
+onwards). Items are rated from 0 (Do Not Feel) to 4 (Feel Very
+Strongly).
+
+These questions can be found in the NVS pre, mid, and post
+questionnaires and the PVS pre and post questionnaires. They are also
+asked during both Rest tasks and exercise tasks and can be found in the
+Data Collection Forms for Day A, B, and C.
 
 \textbf{Scoring} 1. Selects raw variables being used for the current measure
 
@@ -596,7 +593,7 @@ effort scores)
 \item
   Renames variables to be easily identified
 \item
-  Sum the total scores and rename this summary as biss\_sum
+  Sum the total scores and rename this summary as paas\_sum
 \end{enumerate}
 
 \textbf{Key Variables} \texttt{paas\_enthusiastic\_pre} \texttt{paas\_crummy\_pre}
@@ -615,7 +612,7 @@ scale, and higher scores indicate greater anxiety.
 
 \textbf{Key Variables}
 
-\section{Yale-Brown Obsessive Compulsive Scale(YBOCS)}\label{yale-brown-obsessive-compulsive-scaleybocs}
+\section{Yale-Brown Obsessive Compulsive Scale (YBOCS)}\label{yale-brown-obsessive-compulsive-scale-ybocs}
 
 The Yale-Brown Obsessive Compulsive Scale was developed by Wayne Goodman
 Dennis Charney, and is designed to rate the types of symptoms in
@@ -629,7 +626,82 @@ subscales for obsessions (items 1-5) and compulsions (items 6-10).
 
 \textbf{Key Variables}
 
+\section{EMA}\label{ema}
+
+Lab generated measures to assess eating disorder behaviors and
+cognitions both immediately before and after attending study visits.
+
+\chapter{MR21 Measures only (Phase 2)}\label{mr21-measures-only-phase-2}
+
+\section{ED100k-Plus}\label{ed100k-plus}
+
+The ED100k-Plus is a lab adapted version of the Ed100k. It is a self
+report measure that assesses current and history of an eating disorder
+and includes items from the \href{https://pubmed.ncbi.nlm.nih.gov/23220357/}{Dieting and Weight History
+Questionnaire} ( variables
+start with wdqhq in measure), ED History, \href{https://pubmed.ncbi.nlm.nih.gov/15033501/}{Eating Disorder
+Examination-Questionnaire}, .
+It includes questions about binge eating, compensatory behaviors,
+restriction and other eating disorder symptoms.
+
+\section{GAD-7}\label{gad-7}
+
+The GAD-7 is a 7 item self report utilized to screen for Generalized
+Anxiety Disorder and assess severity of symptoms (Spritzer 2006). Each
+item is rated on a 4-point Likert scale from 0 (not at all) to 3 (nearly
+every day). The total score is calculated by summing the scores for each
+item, with higher scores indicating greater severity of anxiety
+symptoms.
+
+\section{PHQ-9}\label{phq-9}
+
+The Patient Health Questionnarire-9 is a self report measure utilize to
+screen for depression. Kroenke, Spitzer \& Williams, 1999)
+
+\section{WHODAS 2.0}\label{whodas-2.0}
+
+The \href{https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health/who-disability-assessment-schedule}{World Health Organization Disability Assessment Schedule
+2.0}
+is a generic assessment instrument for health and disability used across
+all diseases, including mental, neurological and addictive disorders. It consists of 12 items that are rated on a 5 point Likert scale from 0 (None) to 4 (Extreme or cannot do).
+
 \chapter{Task Measures}\label{task-measures}
+
+\section{Markov (PHASE 1)}\label{markov-phase-1}
+
+The Markov task is a behavioral task that assesses decision-making and risk-taking behavior. Participants are presented with a series of choices between different options, each with varying levels of risk and reward. The task is designed to measure how participants weigh the potential benefits and drawbacks of their choices, providing insight into their cognitive processes and risk preferences.
+
+\section{Work For Money}\label{work-for-money}
+
+Work For Money (WFM) is a behavioral task that assesses the relationship between effort and reward. Participants are asked to complete a series of tasks in exchange for monetary rewards. The task is designed to measure th e amount of effort participants are willing to exert for different levels of reward, providing insight into their motivation and decision-making processes.
+
+In the pilot of the study participants were asked to click the space bar a certain amount of times and they would earn \$3 for the completion of the level. There were 10 of these levels, with each one gradually increasing the amount of times they need to hit the space bar.
+
+In the current version of the study, there are 6 levels, with participants earning \$5 per level.
+
+\section{Work For Exercise}\label{work-for-exercise}
+
+Work For Exercise (WFE) is a behavioral task that assesses the relationship between effort and reward in the context of physical activity. Participants are asked to complete a series of exercise tasks in exchange for time to exercise in the later task . The task is designed to measure the amount of effort participants are willing to exert for different levels of reward, providing insight into their motivation and decision-making processes.
+
+In the pilot of the study participants were asked to click the space bar a certain amount of times and they were told they would add 3 minutes of exercise per completion of each level. There were 10 of these levels, with each one gradually increasing the amount of times they need to hit the space bar.
+
+In the current version of the study, there are 6 levels, with participants earning 5 minutes per level.
+
+\section{Inquist (PHASE 2)}\label{inquist-phase-2}
+
+\subsection{Effort Expenditure for Rewards Task}\label{effort-expenditure-for-rewards-task}
+
+Participants have to select between an Easy and a Hard task. Both tasks involve pressing the space bar for a predetermined amount of time. The Hard task offers more money (in this script: 8 variable amounts) but is harder and takes twice as long. Participants make their selection knowingly under 3 different win probabilities (aka they might not win money even if they are successful; particularly not if the win probabilities are low).
+
+\subsection{Two-Step Decision}\label{two-step-decision}
+
+This tasks replaced the Markov Task in the pilot version of the study. Two choice options A1 and A2 are available, which lead to two intermediate outcomes B1 and B2 at different probabilities. Intermediate outcomes B1 and B2 lead to rewards with different probabilities. Participants are instructed to try to earn as much treasure as they can.
+
+\section{Data Collection Form}\label{data-collection-form}
+
+The Data collection form collects biological data (height and weight at first visit; blood pressure and heart rate at the beginning and end of the visit), physiological data (heart rate, RPM, distance and watts during exercise tasks; heart rate during rest task), and affect data in both the rest task and exercise task (Borg RPE and BISS scales).
+
+The Rating of Perceived Exertion Scale (BORG RPE) is a scale used to measure exertion from a scale of 6 (no exertion) to 20 (maximum effort). Participants are asked to rate their exertion every 5 minutes during both the exercise task and the rest task.
 
 \chapter{Sample Description}\label{sample-description}
 

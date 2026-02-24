@@ -1,0 +1,1109 @@
+--- 
+title: "Multimodal Assessment of Exercise in Eating Disorders (MAXED) - Study Procedures and Measures"
+author: "Katherine Schaumberg, Mahathi Gavuji, Caitlynn Rudd"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+always_allow_html: true
+documentclass: book
+bibliography: [MAXED_bookdown.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This codebook contains study information, measures, and complete data dictionary for the A Compensated Exercise Study For Girls And Young Women With Eating Disorder Symptoms (Wave 1: 2020-2022; Wave 2: 2023-2025)"
+---
+--- 
+title: "Multimodal Assessment of Exercise in Eating Disorders (MAXED) - Study Procedures and Measures"
+author: "Katherine Schaumberg, Mahathi Gavuji, Caitlynn Rudd"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+always_allow_html: true
+documentclass: book
+bibliography: [MAXED_bookdown.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This codebook contains study information, measures, and complete data dictionary for the A Compensated Exercise Study For Girls And Young Women With Eating Disorder Symptoms (Wave 1: 2020-2022; Wave 2: 2023-2025)"
+---
+
+# Introduction
+
+This codebook contains study information, measures, and complete data dictionary for the Multimodal Assesment of Exercise in Eating Disorders (MAXED) Study
+
+<!--chapter:end:index.Rmd-->
+
+
+# Study Premise
+
+Placeholder
+
+
+
+<!--chapter:end:01-Study-Premise.Rmd-->
+
+# Procedures
+The first wave of this study (MAXED) will include recruitment of 40 (20 control and 20 participants with ED symptoms) female adolescents and young adults aged 14-22.
+
+The second wave of this study (MR21) will include the recruitment of 100 (50 control and 50 participants with ED symptoms) female adolescents and young adults aged 16-22.
+
+## Recruitment
+
+Recruitment sources included: (1) University Health Services at UW-Madison and other area colleges and universities (2) flyers at area businesses (e.g. fitness centers, coffee shops) (3) local mental health providers, including providers within Wisconsin Psychiatric Institute and Clinic (WisPIC), as well as outside of the UW settings (e.g., at Community Mental Health Centers, private practices, etc.) (4) online advertisement on social media platforms (5) Personal recruitment by study staff, (6) campus e-mail recruitment.
+
+
+
+
+<!--chapter:end:02-Procedures.Rmd-->
+
+# Interventions
+
+There are 2 stages to this protocol: 1) Screening Day with screening assessments; and 2) Day A, DayB, and Day C that consist of computational and exercise tasks, questionnaires, and blood draw. Participants will complete these two stages across 4 separate days. Day A, Day B, and Day C will occur randomly, spaced 6-8 days apart.
+
+## Screening Day stage
+
+During the Screening Day stage, participants will undergo a structured clinical interview to assess current eating disorder symptoms, psychological symptoms,cognitive function assessment, physical status, and demographics. If participants are under 18 years old, parents will also be asked to complete a demographics form. Participants will also complete the Approach Avoidance Conflict task. The assessment stage lasts 2-3 hours.
+
+## Day A, Day B, and Day C Stage
+
+During Day A, participants will complete two different tasks–Task 1: “Reward task” (rest condition) will include self-report measures, two blood draws immediately before and after completing 30 minutes of rest to examine changes in key neurotransmitters over time, and a post-rest behavioral task; and Task 2: “Threat task”(active condition) will include self-report of state emotional, body image, behavioral urges and cravings,a food challenge task of drinking a milkshake, and 30 minutes of exercise.
+
+During Day B, participants will complete Task 1: Reward (active condition), that includes self-report questionnaires, a behavioral task in which participants will work to earn “points” for exercise, and two blood draws, including one immediately before and one immediately after completing the 30 minutes of exercise to examine changes in key neurotransmitters.
+
+On Day C, participants will complete Task 2: Threat (rest condition),which will include completion of self-report questionnaires, a food challenge task, and 30 minutes of rest. Participants will provide four blood samples total during this study. In order to ensure that blood monoamine and hormone levels are controlled, participants will be asked to refrain from eating after1:00pm, only eating a provided nutritional supplement (nutrition bar) as a snack before attending Day A and Day B study visits at 4pm.
+
+Additionally, Task Day B will be scheduled during the follicular phase to control for possible menstrual phase effects on the biological response to exercise. Menstrual phase will be further clarified and controlled by the collection of blood samples on Task Day B to quantify estradiol levels. Participants will also complete a reinforcement learning task following Day A and Day B to examine the acute impact of exercise on reinforcement learning mechanisms. Day A, Day B, and Day C will each last about 2 hours. Lastly, participants will be provided with a fitness tracker to wear for 7 days between the screening visit and their second visit to objectively determine average levels of physical activity.
+
+<!--chapter:end:03-Interventions.Rmd-->
+
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Self-Report Measures (Shared across MAXED and MAXED R21MH131787)
+
+
+## Analogue Exercise Decisions (AED)
+```{r, echo=FALSE, message=FALSE, results='asis'}
+library(DT)
+library(htmltools)
+library(dplyr)
+library(readxl)
+
+
+codebook <- read_xlsx("codebook.xlsx")
+
+mr21_codebook <- read.csv("Data_dictionary/mr21_codebook.csv")
+
+
+aed <- codebook |> 
+  filter(`Form Name` == "analogue_exercise_decisions")
+
+
+#keep only columns 1, 5, 6
+aed <- aed[, c(1, 5, 6)]
+
+# Create the DT widget 
+dt <- datatable(cet,
+                caption = "AED Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand AED Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+
+```
+```
+
+
+## Compulsive Exercise Test (CET)
+
+The Compulsive Exercise Test measures cognitive, affective, and
+behavioral components of excessive exercise in individuals (Taranis et
+al., 2011). There are 24 items that contain 5 subscales which are
+avoidance and rule-driven behavior, weight control exercise, mood
+improvement, lack of exercise enjoyment, and exercise rigidity. Each
+statement is rated on a Likert scale of 0 (never true) to 5 (always
+true), and the score of each subscale is determined by averaging the
+items for that factor. Higher scores indicate greater pathology of
+excessive exercise.
+
+**Scoring** Scoring for the CET includes: 1. selects only variables that
+are relevant for the current measure
+
+2.  Recode all variables (e.g. changing "never true = 1" to "never true
+    = 0"), renamed necessary variables (e.g. cet_week_repeat to
+    cet_week)
+
+3.  Creates a symptom sum score, which gives a count of the number of
+    compulsive exercise symptoms (0-5) that are present for each
+    individual
+
+**Key Variables** `cet_sum` (defines the severity of compulsive exercise
+based on number of symptoms)
+
+MR21: `cet_total`: sum of all items
+
+`cet_clinical`: meets clinical cutoff
+
+`cet_avoid_subscale` : avoidance and rule-driven behavior subscale score
+
+`cet_weight_subscale` : weight control exercise subscale score
+
+`cet_mood_subscale` : mood improvement subscale score
+
+`cet_enjoy_subscale` : lack of exercise enjoyment subscale score
+
+`cet_rigid_subscale` : exercise rigidity subscale score
+
+**All Variables**
+
+```{r, echo=FALSE, message=FALSE, results='asis'}
+library(DT)
+library(htmltools)
+library(dplyr)
+library(readxl)
+
+
+codebook <- read_xlsx("codebook.xlsx")
+
+mr21_codebook <- read.csv("Data_dictionary/mr21_codebook.csv")
+
+
+cet <- codebook |> 
+  filter(`Form Name` == "compulsive_exercise_test")
+
+
+#keep only columns 1, 5, 6
+cet <- cet[, c(1, 5, 6)]
+
+# Create the DT widget 
+dt <- datatable(cet,
+                caption = "CET Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand CET Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+cet_mr21 <- mr21_codebook |> 
+  filter (`Form.Name` == 'compulsive_exercise_test')
+#keep only columns 1, 5, 6
+cet_mr21 <- cet_mr21[, c(1, 5, 6)]
+
+# Create the DT widget
+
+dt <- datatable(cet_mr21,
+                caption = "CET MR21 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand CET MR21 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+```
+
+## Drive for Muscularity (DFM)
+
+The Drive for Muscularity Scale is a 15 item questionnaire that assesses
+the perceptions and behaviors surrounding the desire to gain muscles
+(McCreary & Sasse, 2000). Questions are rated on a Likert scale from 1
+(Always) to 6 (Never). The items are then reversed scored and higher sum
+scores indicating higher drive for muscularity.
+
+MR21 variables are already reverse coded: 0 being Never and 5 being
+Always.
+
+**Scoring** 1. Selects only variables that are relevant for the current
+measure
+
+2.  Items are re-coded to be reversed coded ("1=5, 2=4, 3=3, 4=2, 5=1,
+    6=0")
+
+3.  Creates a symptom average score, which gives an average count of the
+    number of symptoms (0-5) that are present for each individual
+
+**Key Variables** MAXED: `muscularity_average` (average score of all
+items) MR21: `dfm_average` (average score of all items)
+
+**All Variables**
+
+```{r, echo=FALSE, results='asis'}
+dfm <- codebook |> 
+  filter(`Form Name` == "drive_for_muscularity_scale")
+#keep only columns 1, 5, 6
+dfm <- dfm[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(dfm,
+                caption = "DFM Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand DFM Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+dfm_mr21 <- mr21_codebook |> 
+  filter (`Form.Name` == 'drive_for_muscularity_scale')
+#keep only columns 1, 5, 6
+dfm_mr21 <- dfm_mr21[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(dfm_mr21,
+                caption = "DFM MR21 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand DFM MR21 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+
+
+
+```
+
+## Intolerance of Uncertaint-Short Form (IUS-S)
+
+The IUS-S is a 12 item scale that Carleton et al. (2007) adapted from
+the original 27-item Intolerance of Uncertainty Scale from Freeston et
+al. (1994). It assesses the worry that an individual has about the
+possibility of negative events or outcomes, and there are two subscales
+that address anxious and avoidant aspects of the intolerance. Each item
+is scored using a 5-point Likert scale, and the scores are summed, with
+higher scores signifying a greater intolerance of uncertainty.
+
+MR21 codes items on a scale of 0-4, with 0 being "not at all
+characteristic of me" and 4 being "entirely characteristic of me".
+
+**Scoring** 1. Selects only variables that are relevant for the current
+measure
+
+2.  Recoded all necessary variables (e.g. changing "not at all
+    characteristic of me = 1" to "not characteristic of me = 0")
+
+3.  Creates a symptom average score, which gives an average count of the
+    number of symptoms (0-5) that are present for each individual
+
+**Key Variables** MAXED: `iuss_sum` (defines average score of symptoms)
+
+```         
+              MR21: `iuss_prospective_score` (Prospective Anxiety Subscale Score)
+                    `iuss_inhibitory_score` (Inhibitory Anxiety Subscale Score)
+                    `iuss_sum_score` (Total Score)
+```
+
+**All Variables**
+
+```{r, echo=FALSE, results='asis'}
+
+
+#filter variable "Form Name" in codebook to have intolerance_of_uncertainty_scale_short_form_iuss
+ius <- codebook %>%
+  filter(`Form Name` == "intolerance_of_uncertainty_scale_short_form_iuss") 
+
+#keep only columns 1, 5, 6
+ius <- ius[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(ius,
+                caption = "IUS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand IUS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+ius_mr21 <- mr21_codebook |> 
+  filter (`Form.Name` == 'intolerance_of_uncertainty_scaleshort_form_iuss')
+#keep only columns 1, 5, 6
+ius_mr21 <- ius_mr21[, c(1, 5, 6)]
+
+# Create the DT widget
+dt <- datatable(ius_mr21,
+                caption = "IUS MR21 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand IUS MR21 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+```
+
+## The Mini Mental State Examination (MMSE)
+
+The Mini Mental State Examination (MMSE) assesses cognitive ability and
+is frequently used to screen for dementia and examine the severity and
+progression of cognitive impairment (Kurlowicz & Wallace, 1999). The
+five categories measured are orientation, registration, attention and
+calculation, recall, and language. There are 11 items on the
+examination, and the scores range from 0-30, with a score 23 or below
+signaling cognitive impairment.
+
+**Scoring** 1. selects only the variables that are relevant for the
+current measure
+
+2.  Renames raw variables
+
+**Key Variables** `mmse_total` (sum of a participant's score)
+
+**All Variables**
+
+```{r, echo=FALSE, results='asis'}
+
+#filter variable "Form Name" in codebook to have intolerance_of_uncertainty_scale_short_form_iuss
+mmse <- codebook %>%
+  filter(`Form Name` == "minimental_state_exam_mmse") 
+
+#keep only columns 1, 5, 6
+mmse <- mmse[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(mmse,
+                caption = "MMSE Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand MMSE Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+mmse_mr21 <- mr21_codebook |> 
+  filter (`Form.Name` == 'mini_mental_state_exam')
+#keep only columns 1, 5, 6
+mmse_mr21 <- mmse_mr21[, c(1, 5, 6)]
+
+# Create the DT widget
+dt <- datatable(mmse_mr21,
+                caption = "MMSE MR21 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand MMSE MR21 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+
+```
+
+## Brief Fear of Negative Evaluation Scale (BFNE)
+
+Leary (1983) shortened the Fear of Negative Evaluation Scale (Watson &
+Friend, 1969) to create the BFNE. It measures the tolerance to the
+possibility of judgment from others. There are 12 items that use a
+Likert scale (1 'Not at all' to 5 'Extremely') to rate how
+characteristic each statement is of the respondent. The items are summed
+to create a total score where higher scores indicate greater fear of
+negative evaluation.
+
+**Scoring** 1. Selects raw variables being used for the current measure
+
+2.  Re-code variables to new variable names and values (e.g. 'Not at all
+    characteristic of me =1' to 'Not at all characteristic of me =0')
+
+3.  Sum the total scores
+
+**Key Variables** MAXED: `bfnes_sum` (Total BFNES score) MR21:
+`bfnes_sum_score` (Total BFNES score) `bfnes_clinical` (clincal cutoff
+criteria met)
+
+```{r, echo=FALSE, results='asis'}
+bfnes <- codebook |> 
+  filter(`Form Name` == "brief_fear_of_negative_evaluation_scale") 
+
+bfnes <- bfnes[, c(1, 5, 6)]
+
+# Create the DT widget
+dt <- datatable(bfnes,
+                caption = "BFNES Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BFNES Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+bfnes_mr21 <- mr21_codebook |> 
+  filter (`Form.Name` == 'brief_fear_of_negative_evaluation_scale')
+
+#keep only columns 1, 5, 6
+bfnes_mr21 <- bfnes_mr21[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(bfnes_mr21,
+                caption = "BFNES MR21 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BFNES MR21 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+```
+
+## BIS/BAS Scale
+
+The Behavioral Avoidance/Inhibition Scale scales were developed by
+Carver and White (1994) to assess how individuals respond to situations.
+Each statement is rated on a 4-point scale of how strongly one thinks
+that the statement applies to themselves. The BAS, which is the extent
+to which someone acts to gain rewards or positive outcomes, has three
+sub-scales: reward responsiveness, drive and fun seeking. There is one
+sub-scale for BIS, which is the extent to which someone acts to avoid
+negative outcomes.
+
+**Scoring** 1. Selects all relevant variables
+
+2.  Adds variables `bis_ambitious` `bis_all_out` `bis_act_now`
+    `bis_no_hold` get `bas_drive`.
+3.  Adds variables `bis_explore` `bis_fun` `bis_spontaneous`
+    `bis_crave_excite` to get `bas_fun_seeking`
+4.  Adds variables `bis_love_doing` `bis_excitement`
+    `bis_opportunity_excite` `bis_positive_effect` `bis_excite_win` to
+    get `bas_reward_responsiveness`
+5.  Adds variables `bis_negative_event_fear` `bis_criticism`
+    `bis_angry bis_worked_up` `bis_worry_poor_perform` `bis_no_fear`
+    `bis_worry_for_mistake` to get `bis_sum`
+
+**Key Variables** `bis_sum` `bas_drive` `bas_fun_seeking`
+`bas_reward_responsiveness`
+
+```{r, echo=FALSE, results='asis'}
+bis <- codebook |> 
+  filter(`Form Name` == "behavioral_avoidanceinhibition_scales")
+bis <- bis[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(bis,
+                caption = "BIS/BAS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BIS/BAS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+bis_mr21 <- mr21_codebook |> 
+  filter (`Form.Name` == 'behavioral_avoidanceinhibition_scales')
+
+#keep only columns 1, 5, 6
+bis_mr21 <- bis_mr21[, c(1, 5, 6)]
+
+# Create the DT widget
+dt <- datatable(bis_mr21,
+                caption = "BIS/BAS MR21 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BIS/BAS MR21 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+
+```
+
+## The Body Image States Scale (BISS)
+
+The Body Image States Scale (BISS) is a six-item measure of individuals'
+evaluation and affect about their body image at the current moment of
+time. The questions are answered on a 9-point Likert scale.
+
+These questions are asked in our NVS Self-Report States pre and mid and
+post surveys AND our PVS pre and post questionnaires. They are also
+asked during both Rest tasks and exercise tasks and can be found in the
+Data Collection Forms for Day A, B, and C.
+
+**Scoring** 1. Selects raw variables being used for the current measure
+
+2.  Renames variables to be easily identified
+
+3.  Recode variables so that the least impaired = 0 and the most
+    impaired = 8
+
+4.  Sum the total scores and rename this summary as biss_sum
+
+**Key Variables** `biss_appearance_pre` `biss_body_size_pre`
+`biss_weight_pre` `biss_attractive_pre` `biss_looks_pre`
+`biss_average_looks_pre`
+
+```{r, echo=FALSE, results='asis'}
+library(stringr)
+biss <- codebook |> 
+ filter(
+    str_detect(`Variable / Field Name`, 
+               "biss|rest_bis|ex_phys|ex_shap|ex_wt|ex_attract|ex_looks|ex_avg")
+  )
+  
+
+
+biss <- biss[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(biss,
+                caption = "BISS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand BISS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+```
+
+## The Difficulties in Emotion Regulation Scale (DERS)
+
+The Difficulties in Emotion Regulation Scale (DERS) is an instrument
+measuring emotion regulation problems developed by K.L. Gratz and L.
+Roemer.The self-report scale is comprised of 36 items asking respondents
+how they relate to their emotions in order to produce scores on 6
+different subscales. These subscales include:
+
+1.  Nonacceptance of emotional responses (Nonacceptance)
+2.  Difficulties engaging in goal-directed behavior (Goals)
+3.  Impulse control difficulties (Impulse)
+4.  Lack of emotional awareness (Awareness)
+5.  Limited access to emotion regulation strategies (Strategies)
+6.  Lack of emotional clarity (Clarity)
+
+**Scoring** 1. Selects raw variables being used for the current measure
+2. Renames MAXED (Phase 1) variables to be easily identified (rename
+them to match MR21 variables listed below) 3. For MAXED variables only:
+add subscale variables Nonacceptance: ders_11, ders_12, ders_21,
+ders_23, ders_25, ders_29 Goals: ders_13, ders_18, ders_20_rs, ders_26,
+ders_33 Impulse: ders_3, ders_14, ders_19, ders_24_rs, ders_27,ders_32
+Lack of emotional awareness: ders_2_rs, ders_6_rs, ders_8_rs,
+ders_10_rs, ders_17_rs, ders_34_rs Limited access to emotion regulation
+strategies: ders_15, ders_16, ders_22_rs, ders_28, ders_30, ders_31,
+ders_35, ders_36 Lack of emotional clarity: ders_1_rs, ders_4, ders_5,
+ders_7_rs, ders_9
+
+**Key Variables** For MR21: 'ders_nonacceptance_score'
+'ders_goal_direct_score' 'ders_impulse_score' 'ders_emotion_aware_score'
+'ders_limited_strat_score' 'ders_clarity_score'
+
+```{r, echo=FALSE, results='asis'}
+
+ders <- codebook %>%
+  filter(`Form Name` == "difficulty_in_emotion_regulation_scale_ders") 
+
+#keep only columns 1, 5, 6
+ders <- ders[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(ders,
+                caption = "DERS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand DERS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
+
+## ED History \*\*\*(MAXED-PHASE 1 only- only from participants ids 17-42)
+
+The Eating Disorder History form is a self-report questionnaire that
+assess participants history of eating disorder symptoms and behaviors.
+Questions vary from yes/no to text entry to Likert scale.
+
+**Scoring** 1. Selects raw variables being used for the current measure
+
+2.  Renames variables to be easily identified
+
+3.  Sum the total scores and rename this summary as edhistory_sum
+
+**Key Variables** `edhistory_weightloss` `edhistory_fear_fat`
+`edhistory_feel_fat` `edhistory_thin` `edhistory_danger`
+`edhistory_limit_food` `edhistory_concentrate` `edhistory_binge`
+`edhistory_not_hungry` `edhistory_alone` `edhistory_guilt`
+`edhistory_upset` `edhistory_self_vomit` `edhistory_laxatives`
+`edhistory_diuretics` `edhistory_fast`
+
+```{r, echo=FALSE, results='asis'}
+
+edhis <- codebook %>%
+  filter(`Form Name` == "ed_history") 
+
+#keep only columns 1, 5, 6
+edhis <- edhis[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(edhis,
+                caption = "DERS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand ED History Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
+
+## Food Craving Questionnaire
+
+The FCQ used in our study is a self report questionnaire that is adapted
+to measure an individuals desire to engage in certain eating disorder
+behaviors like binging, restricting, and exercising. The questions are
+rated on a 5-point Likert scale from 1 (strongly disagree) to 5
+(strongly agree). These set of 18 questions can be found in the NVS pre,
+mid, and post questionnaires and the PVS pre and post questionnaires.
+
+**Scoring** 1. Selects raw variables being used for the current measure
+
+2.  Renames variables to be easily identified
+
+3.  Recode variables so that "strongly disagree" = 0 and "strongly
+    agree" = 4
+
+4.  Sum the total scores and rename this summary as fcq_sum
+
+**Key Variables** `fcq_desire_restrict_pre` `fcq_desire_fast_pre`
+`fcq_desire_vomit_pre` `fcq_desire_laxatives_pre`
+`fcq_desire_exercise_pre` `fcq_desire_binge_pre`
+
+```{r, echo=FALSE, results='asis'}
+
+fcq <- codebook %>%
+filter(
+    str_detect(`Variable / Field Name`, 
+               "nvs_fcq|pvs_fcq")
+  )
+
+#keep only columns 1, 5, 6
+fcq <- fcq[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(fcq,
+                caption = "FCQ Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand FCQ Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+```
+
+## Frost Multidimensional Perfectionism Scale (FMPS)
+
+The Frost Multidimensional Perfectionism Scale (FMPS) is a 35 question
+self-report measure with four sub-scales of perfectionism. There are
+four subscales: Concern over mistakes and doubts about actions,
+Excessive concern with parents’ expectations and evaluation, Excessively
+high personal standards, Concern with precision, order and organisation.
+Each item is scored on a 5-point Likert-style scale (1 = strongly
+disagree; 5= strongly agree) to describe how well each item describes
+the participant experiences. Scores are derived by summing responses
+across the questions included in each subscale.
+
+MR21 only has 20 of the 35 questions (contains Concerns over mistakes
+and doubts about actions and Excessive concern with parents'
+expectations and evaluations), while MAXED has all 35.
+
+**Scoring** 1. selects only the variables that are relevant for the
+current measure
+
+2.  creates six additional variables based on sum scores reflecting four
+    subscales of the questionnaire:
+
+Concern over mistakes and doubts about actions:
+
+MR21: 'fmps_mistakes_actions_score'
+
+MAXED: fmps_mistake_upset + fmps_work_failure + fmps_worse_fail +
+fmps_partial_fail + fmps_careful + fmps_less_best +
+fmps_negative_mistake + fmps_inferior + fmps_respect + fmps_doubt +
+fmps_repeat + fmps_long_time + fmps_mistake_likeness
+
+Excessively high personal standards score
+
+MR21: fmps_standards_score MAXED: fmps_self_standard + fmps_competent +
+fmps_higher_goal + fmps_focus + fmps_extreme_goal +
+fmps_lower_standard + fmps_high_perform
+
+```{r, echo=FALSE, results='asis'}
+
+fmps <- codebook %>%
+filter(`Form Name` == "frost_multidimensional_perfectionism_scale") 
+
+#keep only columns 1, 5, 6
+fmps <- fmps[, c(1, 5, 6)]
+
+
+
+
+# Create the DT widget
+dt <- datatable(fmps,
+                caption = "FMPS Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand FMPS Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+```
+
+## Functional Assessment of Driven Exercise (FADE)/ Functional Assessment of Maladaptive Behaviors (FAMB)
+
+MAXED: The FAMB, adapted by the lab for exercise, is a 22 item
+questionnaire that assess for maladaptive exercise behavior. Items
+include : " I exercise to cope/relieve stress" or Questions are scored
+on a 5-point Likert scale from 1 (never) to 5 (always).
+
+MR21: The FADE is a 28 item questionnaire that assesses for driven
+exercise similar to the FAMB. The questions also include assessement of
+control. Questions are scored on a 4-point Likert scale from 0 (never)
+to 3 (often). There are four subscales: Autonomic Positive
+Reinforcement, Autonomic Negative Reinforcement, Social Positive
+Reinforcement, and Social Negative Reinforcement.
+
+**Key Variables** For MR21: 'fade_apr_score' 'fade_anr_score'
+'fade_spr_score' 'fade_snr_score'
+
+```{r, echo=FALSE, results='asis'}
+famb <- codebook %>%
+  filter (`Form Name` == 'function_of_exercise')
+
+#keep only columns 1, 5, 6
+famb <- famb[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(famb,
+                caption = "FAMB Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand FAMB Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+fade <- mr21_codebook |> 
+  filter (`Form.Name` == 'functional_assessment_of_driven_exercise_fade')
+#keep only columns 1, 5, 6\
+fade <- fade[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(fade,
+                caption = "FADE Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand FADE Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
+
+## Menstrual Cycle Information (MCI ***MAXED only) 
+
+The MCI is a questionnaire that assesses an individual's menstrual cycle
+and pubertal development. It consists of 21 total items.
+
+
+## Physical activity affect scale (PAAS)
+
+The PAAS is a 12-item self-report measure that assesses momentary affect
+response to exercise. Both phases of the study have adapted a shorter
+scale. MAXED has four items asking how 1) Enthusiastic 2) Crummy 3)
+Fatigued 4) Calm they feel at the moment. MR21 added in the middle of
+the study a fifth item, Anxious (Starting from id MR21-1_028 and
+onwards). Items are rated from 0 (Do Not Feel) to 4 (Feel Very
+Strongly).
+
+These questions can be found in the NVS pre, mid, and post
+questionnaires and the PVS pre and post questionnaires. They are also
+asked during both Rest tasks and exercise tasks and can be found in the
+Data Collection Forms for Day A, B, and C.
+
+**Scoring** 1. Selects raw variables being used for the current measure
+
+2.  Renames variables to be easily identified
+
+3.  Sum the total scores and rename this summary as paas_sum
+
+**Key Variables** `paas_enthusiastic_pre` `paas_crummy_pre`
+`paas_fatigued_pre` `paas_calm_pre`
+
+## State Trait Anxiety Inventory is a self-evaluation (STAI)
+
+The State Trait Anxiety Inventory is a self-evaluation questionnaire
+developed by Charles D. Spielberger. It can be used in clinical settings
+to diagnose anxiety and to distinguish it from depressive syndromes.
+Form Y, its most popular version, has 20 items for assessing trait
+anxiety and 20 for state anxiety. All items are rated on a 4-point
+scale, and higher scores indicate greater anxiety.
+
+**Scoring**
+
+**Key Variables**
+
+## Yale-Brown Obsessive Compulsive Scale (YBOCS)
+
+The Yale-Brown Obsessive Compulsive Scale was developed by Wayne Goodman
+Dennis Charney, and is designed to rate the types of symptoms in
+patients with Obsessive Compulsive Disorder and their severity. This
+rating scale is intended for use as a semi-structured interview. The
+interview should assess the items in the listed order and use the
+questions provided. The total score is usually computed from the
+subscales for obsessions (items 1-5) and compulsions (items 6-10).
+
+**Scoring**
+
+**Key Variables**
+
+## EMA
+
+Lab generated measures to assess eating disorder behaviors and
+cognitions both immediately before and after attending study visits.
+
+# MR21 Measures only (Phase 2)
+
+## ED100k-Plus
+
+The ED100k-Plus is a lab adapted version of the Ed100k. It is a self
+report measure that assesses current and history of an eating disorder
+and includes items from the [Dieting and Weight History
+Questionnaire](https://pubmed.ncbi.nlm.nih.gov/23220357/) ( variables
+start with wdqhq in measure), ED History, [Eating Disorder
+Examination-Questionnaire](https://pubmed.ncbi.nlm.nih.gov/15033501/), .
+It includes questions about binge eating, compensatory behaviors,
+restriction and other eating disorder symptoms.
+
+```{r, echo=FALSE, results='asis'}
+ed100kplus <- mr21_codebook |> 
+  filter (`Form.Name` == 'ed_100k_plus')
+
+#keep only columns 1, 5, 6
+ed100kplus <- ed100kplus[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(ed100kplus,
+                caption = "ED100k-Plus Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand ED100k-Plus Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+
+
+```
+
+## GAD-7
+
+The GAD-7 is a 7 item self report utilized to screen for Generalized
+Anxiety Disorder and assess severity of symptoms (Spritzer 2006). Each
+item is rated on a 4-point Likert scale from 0 (not at all) to 3 (nearly
+every day). The total score is calculated by summing the scores for each
+item, with higher scores indicating greater severity of anxiety
+symptoms.
+
+```{r, echo=FALSE, results='asis'}
+gad <- mr21_codebook |> 
+  filter (`Form.Name` == 'gad7')
+
+#keep only columns 1, 5, 6
+gad <- gad[, c(1, 5, 6)]
+# Create the DT widget
+dt <- datatable(gad,
+                caption = "GAD-7 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand GAD-7 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+```
+
+## PHQ-9
+
+The Patient Health Questionnarire-9 is a self report measure utilize to
+screen for depression. Kroenke, Spitzer & Williams, 1999)
+
+```{r, echo=FALSE, results='asis'}
+phq <- mr21_codebook |> 
+  filter (`Form.Name` == 'phq9')
+#keep only columns 1, 5, 6
+phq <- phq[, c(1, 5, 6)]
+
+# Create the DT widget
+dt <- datatable(phq,
+                caption = "PHQ-9 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand PHQ-9 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+
+
+
+
+```
+
+## WHODAS 2.0
+
+The [World Health Organization Disability Assessment Schedule
+2.0](https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health/who-disability-assessment-schedule)
+is a generic assessment instrument for health and disability used across
+all diseases, including mental, neurological and addictive disorders. It consists of 12 items that are rated on a 5 point Likert scale from 0 (None) to 4 (Extreme or cannot do). 
+
+
+```{r, echo=FALSE, results='asis'}
+whodas <- mr21_codebook |> 
+  filter (`Form.Name` == 'whodas_20')
+#keep only columns 1, 5, 6
+whodas <- whodas[, c(1, 5, 6)]
+
+# Create the DT widget
+dt <- datatable(whodas,
+                caption = "WHODAS 2.0 Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand WHODAS 2.0 Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+```
+
+
+<!--chapter:end:04-SR-Measures.Rmd-->
+
+
+# Task Measures
+
+Placeholder
+
+
+## Markov (PHASE 1)
+## Work For Money
+## Work For Exercise
+## Inquist (PHASE 2)
+### Effort Expenditure for Rewards Task
+### Two-Step Decision
+## Data Collection Form 
+
+<!--chapter:end:05-Task-Measures.Rmd-->
+
+# Sample Description
+
+Recruitment sources include: (1) University Health Services at UW-Madison and other area colleges and universities (2) flyers at area businesses (e.g. fitness centers, coffee shops) (3) local mental health providers, including providers within Wisconsin Psychiatric Institute and Clinic (WisPIC), as well as outside of the UW settings (e.g., at Community Mental Health Centers, private practices, etc.) (4) online advertisement on social media platforms (5) direct, peer-to-peer recruitment by peer facilitators, (6) campus e-mail recruitment.
+
+
+
+<!--chapter:end:06-Sample-Description.Rmd-->
+
+# Data Requests and Terms of Use
+
+We aim to share data from the MAXED project will all interested parties. 
+
+Depending on data necessary for analysis, this may include providing collaborative access to the data via external log-in to our [research drive](https://kb.wisc.edu/researchdata/page.php?id=96642) and completing a [data transfer and use agreement](https://rsp.wisc.edu/contracts/DTUA-De-IdentifiedData.pdf). We expect most data requests will take 2-4 weeks for administrative processing. 
+
+In order to request data use, please complete the following steps: 
+
+**1.** Send an email with the title 'MAXED data use' to embarklab@psychiatry.wisc.edu with the following information: 
+
+  **a.** Name, affiliation, training status and year (e.g. second-year graduate student; post-baccalaureate research coordinator, first-year postdoc, assistant professor)
+
+  **b.** Tentative title for proposed analysis and 1-paragraph description
+
+  **c.** Two identified EMBARK Lab collaborators you would be interested in working with (see [lab personnel](https://embark.psychiatry.wisc.edu/index.php/people/) for information about lab members and their interests)
+
+**2.** [Book a 15-minute meeting](https://calendly.com/katherine-schaumberg/15min) with Dr. Schaumberg to discuss your idea.
+
+For secondary analysis projects that *exclusively* use MAXED data, Dr. Schaumberg will serve as senior (last) author, and at least one additional EMBARK Lab collaborator will join as an author on the project. Alternative arrangements can be discussed if mAXED is one of multiple data sources for a project. 
+
+<!--chapter:end:07-Data-Requests.Rmd-->
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:08-References.Rmd-->
+

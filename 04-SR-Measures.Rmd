@@ -6,6 +6,46 @@ editor_options:
 
 # Self-Report Measures (Shared across MAXED and MAXED R21MH131787)
 
+
+## Analogue Exercise Decisions (AED)
+```{r, echo=FALSE, message=FALSE, results='asis'}
+library(DT)
+library(htmltools)
+library(dplyr)
+library(readxl)
+
+
+codebook <- read_xlsx("codebook.xlsx")
+
+mr21_codebook <- read.csv("Data_dictionary/mr21_codebook.csv")
+
+
+aed <- codebook |> 
+  filter(`Form Name` == "analogue_exercise_decisions")
+
+
+#keep only columns 1, 5, 6
+aed <- aed[, c(1, 5, 6)]
+
+# Create the DT widget 
+dt <- datatable(cet,
+                caption = "AED Variables",
+                options = list(pageLength = 10, autoWidth = TRUE))
+
+# Wrap in collapsible HTML
+htmltools::tagList(
+  HTML("<details><summary><strong>Click to expand AED Table</strong></summary>"),
+  dt,
+  HTML("</details>")
+)
+
+
+
+
+```
+```
+
+
 ## Compulsive Exercise Test (CET)
 
 The Compulsive Exercise Test measures cognitive, affective, and
@@ -48,7 +88,7 @@ MR21: `cet_total`: sum of all items
 
 **All Variables**
 
-```{r, echo=FALSE, results='asis'}
+```{r, echo=FALSE, message=FALSE, results='asis'}
 library(DT)
 library(htmltools)
 library(dplyr)
